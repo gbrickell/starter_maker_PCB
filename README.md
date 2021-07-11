@@ -20,3 +20,10 @@ Both MicroPython and Arduino IDE (C/C++) example code are provided.
 
 ## ESP32 microcontroller code
 Just Arduino IDE (C/C++) example code is provided and it was developed and tested using a 38pin ESP32 microcontroller module.
+
+For the buzzer_player and LED1_flash_web example code, 'data' is used that needs to be loaded into SPIFFS before compiling and uploading the code.
+
+## ESP8266 microcontroller code
+Just Arduino IDE (C/C++) example code is provided and it was developed and tested using a 30pin ESP8266 microcontroller NodeMCU v1.0 module.
+
+For the buzzer_player and the various LED1_flash_web??? example code, 'data' is used that needs to be loaded into SPIFFS before compiling and uploading the code.
