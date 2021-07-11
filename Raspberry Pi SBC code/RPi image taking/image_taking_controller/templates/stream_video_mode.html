@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+  <!-- version: 01.00 -->
+  <!-- file name: stream_video_mode.html -->
+  <!-- image_taking controller stream video mode option HTML  -->
+  <!-- Author: Enmore Green Ltd -->
+  <!-- Date: 210523 -->
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="video container">
+  
+  	<!-- 1st row of the streaming video interface: show video  -->
+    <div class="first row">
+      <div style="margin-top: 3%; width: auto; padding-left: auto; padding-right: auto; text-align: center; font-size: 18px;">
+	  
+		<div style="width: 100%;">
+		<p><b>{{ set_resW }}x{{ set_resH }} streaming started at: {{ time_now }} - rotation: {{ set_rotate }} - flipping: {{ set_flip }}</b></p>
+		</div>
+
+		<!-- conditionally set the class with the pixel width/height & other 'exotic' parameters set from the passed variables  -->
+		{% if set_rotate == "90" %}<img src="{{ url_for('video_feed', pixwidth=set_resW|int, pixheight=set_resH|int, pbr=set_bright|int, pcon=set_contrast|int, psat=set_sat|int, phue=set_hue|int, pgain=set_gain|int, pexp=set_exp|int ,pwbal=set_wbal|int, pfocus=set_focus|int ) }}" class="rotate90">
+		{% elif set_rotate == "180" %}<img src="{{ url_for('video_feed', pixwidth=set_resW|int, pixheight=set_resH|int, pbr=set_bright|int, pcon=set_contrast|int, psat=set_sat|int, phue=set_hue|int, pgain=set_gain|int, pexp=set_exp|int ,pwbal=set_wbal|int, pfocus=set_focus|int ) }}" class="rotate180">
+		{% elif set_rotate == "270" %}<img src="{{ url_for('video_feed', pixwidth=set_resW|int, pixheight=set_resH|int, pbr=set_bright|int, pcon=set_contrast|int, psat=set_sat|int, phue=set_hue|int, pgain=set_gain|int, pexp=set_exp|int ,pwbal=set_wbal|int, pfocus=set_focus|int ) }}" class="rotate270">
+		{% elif set_flip == "horizontal" %}<img src="{{ url_for('video_feed', pixwidth=set_resW|int, pixheight=set_resH|int, pbr=set_bright|int, pcon=set_contrast|int, psat=set_sat|int, phue=set_hue|int, pgain=set_gain|int, pexp=set_exp|int ,pwbal=set_wbal|int, pfocus=set_focus|int ) }}" class="img-hor">
+		{% elif set_flip == "vertical" %}<img src="{{ url_for('video_feed', pixwidth=set_resW|int, pixheight=set_resH|int, pbr=set_bright|int, pcon=set_contrast|int, psat=set_sat|int, phue=set_hue|int, pgain=set_gain|int, pexp=set_exp|int ,pwbal=set_wbal|int, pfocus=set_focus|int ) }}" class="img-vert">
+		{% elif set_flip == "both" %}<img src="{{ url_for('video_feed', pixwidth=set_resW|int, pixheight=set_resH|int, pbr=set_bright|int, pcon=set_contrast|int, psat=set_sat|int, phue=set_hue|int, pgain=set_gain|int, pexp=set_exp|int ,pwbal=set_wbal|int, pfocus=set_focus|int ) }}" class="img-hor-vert">
+		{% else %}<img src="{{ url_for('video_feed', pixwidth=set_resW|int, pixheight=set_resH|int, pbr=set_bright|int, pcon=set_contrast|int, psat=set_sat|int, phue=set_hue|int, pgain=set_gain|int, pexp=set_exp|int ,pwbal=set_wbal|int, pfocus=set_focus|int ) }}" >
+		{% endif %}
+		
+
+      </div>
+    </div>
+
+  	<!-- 2nd row of the streaming video interface: select new mode -->
+	<div class="second row">
+      <div class="one-third column" style="margin-top: 3%">
+      </div>
+      <div class="one-third column" style="margin-top: 3%">
+        <a class="button button-primary u-full-width" href="/streamvid/select">Select new mode</a>
+      </div>
+      <div class="one-third column" style="margin-top: 3%">
+      </div>
+    </div>
+
+  	<!-- 3rd row of the streaming video interface: text -->
+	<div class="third row">
+	  <div style="margin-top: 0; width: auto; padding-left: auto; padding-right: auto; text-align: center;"">
+	    <p>  </p>
+	    <p><b>Always go to 'SELECT NEW MODE' before trying to stop the streaming app with CTRL-C</b></p>
+	  </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->

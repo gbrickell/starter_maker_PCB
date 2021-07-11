@@ -1,0 +1,48 @@
+  <!-- version: 01.00 -->
+  <!-- file name: run_led1.html -->
+  <!-- electronics web controller run the LEDs HTML  -->
+  <!-- Author: GB -->
+  <!-- Date: 210131 -->
+  
+{% extends 'electronics_layout.html' %}
+
+{% block content %}
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+
+    <!-- 1st row of the run LED lighting process: option to run the LED lighting process  -->
+	<div class="first row">
+      <div style="margin-top: 3%; width: auto; padding-left: 15%; padding-right: 15%;">
+        <a class="button button-primary u-full-width" href="/ledlight/led_on">switch the RED LED on</a>
+      </div>
+    </div>
+
+    <!-- 2nd row of the run LED lighting process: option to stop the LED lighting process   -->
+	<div class="second row">
+      <div style="margin-top: 3%; width: auto; padding-left: 15%; padding-right: 15%;">
+        <a class="button button-primary u-full-width" href="/ledlight/led_off">switch the RED LED off</a>
+      </div>
+    </div>
+
+    <!-- 3rd row of the run LED lighting process: option to stop the LED lighting process   -->
+	<div class="third row">
+      <div style="margin-top: 3%; width: auto; padding-left: 15%; padding-right: 15%;">
+        <a class="button button-primary u-full-width" href="/ledlight/led_cycle">cycle the RED LED on/off n times</a>
+      </div>
+    </div>
+
+    <!-- 4th row of the run LED lighting process: go back to selection mode   -->
+	<div class="fourth row">
+      <div style="margin-top: 3%; width: auto; padding-left: 15%; padding-right: 15%;">
+        <a class="button button-primary u-full-width" href="/ledlight/select_mode">back to mode selection</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <!-- version: 01.00 -->
+  <!-- file name: select_mode.html -->
+  <!-- image_taking controller mode selection HTML  -->
+  <!-- Author: Enmore Green Ltd -->
+  <!-- Date: 210523 -->
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+
+    <!-- 1st row of the selection interface: option to start streaming  -->
+	<div class="second row">
+      <div style="margin-top: 3%; width: auto; padding-left: auto; padding-right: auto; text-align: center;">
+        <a class="button button-primary u-full-width" href="/streamvid">start streaming video</a>
+      </div>
+    </div>
+
+    <!-- 2nd row of the selection interface: option to adjust display settings  -->
+	<div class="second row">
+      <div style="margin-top: 3%; width: auto; padding-left: auto; padding-right: auto; text-align: center;">
+        <a class="button button-primary u-full-width" href="/camsetup">adjust camera display settings</a>
+      </div>
+    </div>
+
+    <!-- 3rd row of the selection interface: option to change the camera resolution options -->
+	<div class="third row">
+      <div style="margin-top: 3%; width: auto; padding-left: auto; padding-right: auto; text-align: center;">
+        <a class="button button-primary u-full-width" href="/camoptions">update camera options</a>
+      </div>
+    </div>
+
+
+  </div>
+
+{% endblock %}
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  

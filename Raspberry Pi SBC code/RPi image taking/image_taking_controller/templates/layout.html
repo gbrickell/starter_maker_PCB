@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <!-- version: 1.00 -->
+  <!-- file name: layout.html -->
+  <!-- Starter Kit PCB PCBv1.0 Flask web interface - master layout page skeleton for image streaming -->
+  <!-- this file is 'invoked' for every HTML page to set out the overall layout -->
+  <!-- Author: Enmore -->
+  <!-- Date: 210523 -->
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="description" content={{description}}>
+  <meta name="author" content="Enmore">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– 
+  <link rel="stylesheet" href="../static/font-awesome-4-6-3/css/font-awesome.min.css">   -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize_advanced.css') }}"> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton_advanced.css') }}">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+</head>
+<body>
+  {% include 'header_insert.html' %}
+  {% block content %}{% endblock %}
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+  <!-- version: 01.00 -->
+  <!-- file name: electronics_select_mode.html -->
+  <!-- electronics web controller mode selection HTML  -->
+  <!-- Author: GB -->
+  <!-- Date: 210518 -->
+
+{% extends 'electronics_layout.html' %}
+
+{% block content %}
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+
+
+    <!-- 1st row of the selection interface: option to start the LED lighting process  -->
+	<div class="first row">
+      <div style="margin-top: 3%; width: auto; padding-left: 15%; padding-right: 15%;">
+        <a class="button button-primary u-full-width" href="/ledlight">RED LED lighting options</a>
+      </div>
+    </div>
+
+    <!-- 2nd row of the selection interface: option to adjust lighting sequence parameters settings  -->
+	<div class="second row">
+      <div style="margin-top: 3%; width: auto; padding-left: 15%; padding-right: 15%;">
+        <a class="button button-primary u-full-width" href="/ledsetup">adjust lighting cycle parameters</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->

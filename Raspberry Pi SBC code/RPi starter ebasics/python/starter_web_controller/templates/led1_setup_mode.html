@@ -1,0 +1,43 @@
+  <!-- version: 01.00 -->
+  <!-- file name: led1_setup_mode.html -->
+  <!-- electronics web controller update the LED parameters HTML  -->
+  <!-- Author: GB -->
+  <!-- Date: 210518 -->
+{% extends 'electronics_layout.html' %}
+
+{% block content %}
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+  
+	<!-- 1st row of the update LED parmeters: set the LED on time  -->
+	<div class="first row">
+	  	<form action="/ledsetup/update_settings" method="get" >
+      		<div  style="margin-top: 3px; margin-left: 300px; text-align: left; font-size: 14px; width: 85%; float: left; ">
+    <b>LED on cycle time : </b>
+    <input id="input1" name="ledontime"  size="7" type="text" value='{{ on_time }}' />
+    <b> can use a decimal number</b><br/>
+	<b>LED off cycle time: </b>
+	<input id="input2" name="ledofftime" size="7" type="text" value='{{ off_time }}' />
+	<b> can use a decimal number</b><br/>
+	<b>LED number of cycles &nbsp;: </b>
+	<input id="input3" name="cyclesled"  size="7" type="text" value='{{ led_cycles }}' />
+	<b> only use an integer number</b><br/>
+        &nbsp; &nbsp; <input name="submit" type="submit" value='update' /> &nbsp;
+      		</div>
+	  	</form>	  
+    </div>
+
+    <!-- 2nd row of the update LED parmeters: go back to select mode  -->
+	<div class="second row">
+      <div style="margin-top: 3%; width: auto; padding-left: 15%; padding-right: 15%;">
+        <a class="button button-primary u-full-width" href="/ledsetup/select_mode">back to mode selection</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->

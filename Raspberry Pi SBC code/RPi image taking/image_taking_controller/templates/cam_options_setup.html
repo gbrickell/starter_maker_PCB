@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+  <!-- version: 01.00 -->
+  <!-- file name: cam_options_setup.html -->
+  <!-- image_taking controller camera options setup i.e. what resolutions are available for the camera HTML  -->
+  <!-- Author: Enmore Green Ltd -->
+  <!-- Date: 210523 -->
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="video container">
+  
+  	<!-- 1st row of the camera options interface: title text -->
+    <div class="first row">
+	  <div class="video_header" style="text-align: center; font-size: 18px;">
+	    <br/><b>Imaging Taking - camera options screen</b>
+	  </div>
+    </div>
+
+	<form action="/camoptions/update_resolutions" method="get">
+    <!-- 2nd row of the camera set up interface: camera resolution options checkboxes  -->
+	<div class="second row">
+      <div style="margin-top: 3%; margin-botton: 0px; text-align: center;"><b>Select the resolutions available from the camera:</b></div>
+	  <div style="margin-top: 0px; text-align: center;">
+	  <input type="checkbox" id="res1" name="res1" value="160x120" {% if set_res1 == "160x120" %} checked {% endif %} >
+	  <label for="re1">&nbsp;&nbsp;160x120</label><br>
+	  <input type="checkbox" id="res2" name="res2" value="176x144" {% if set_res2 == "176x144" %} checked {% endif %} >
+	  <label for="re1">&nbsp;&nbsp176x144</label><br>
+      <input type="checkbox" id="res3" name="res3" value="320x240" {% if set_res3 == "320x240" %} checked {% endif %} >
+	  <label for="re1">&nbsp;&nbsp320x240</label><br>
+	  <input type="checkbox" id="res4" name="res4" value="352x288" {% if set_res4 == "352x288" %} checked {% endif %} >
+	  <label for="re1">&nbsp;&nbsp352x288</label><br>
+	  <input type="checkbox" id="res5" name="res5" value="640x480" {% if set_res5 == "640x480" %} checked {% endif %} >
+	  <label for="re1">&nbsp;&nbsp640x480</label><br>
+	  <input type="checkbox" id="res6" name="res6" value="800x600" {% if set_res6 == "800x600" %} checked {% endif %} >
+	  <label for="re1">&nbsp;&nbsp800x600</label><br>
+	  <input type="checkbox" id="res7" name="res7" value="1280x720" {% if set_res7 == "1280x720" %} checked {% endif %} >
+	  <label for="re1">&nbsp;&nbsp1280x720</label><br>
+	  <input type="checkbox" id="res8" name="res8" value="1920x1080" {% if set_res8 == "1920x1080" %} checked {% endif %} >
+	  <label for="re1">&nbsp;&nbsp1920x1080</label><br>
+	  </div>
+    </div>
+     <div style="text-align: center;"><input name="submit" type="submit" value='update' /> </div>
+    </form>
+
+	<!-- 3rd row of of the camera set up interface: other (more exotic!) camera settings  -->
+	<div class="third row"><div style="text-align: center;"><b>Only use integer numbers - and set a value of 9999 to designate non-use</b><br></div>
+	 <form action="/camoptions/update_settings" method="get" >
+	  <div style="margin-top: 3px; margin-left: 0px; text-align: left; font-size: 14px; width: 100%; ">
+     <table cellpadding="0px" cellspacing="0px" align="center"><tr>
+	 <td style="text-align: right;"><b>brightness<br>(0-255)</b></td><td><input id="input1" name="br_set"  size="3" type="text" value='{{ set_bright }}' /></td>
+	 <td style="text-align: right;"><b>contrast<br>(0-255)</b></td><td><input id="input2" name="con_set" size="3" type="text" value='{{ set_contrast }}' /></td></tr><tr>
+	 <td style="text-align: right;"><b>saturation<br>(0-255)</b></td><td><input id="input3" name="sat_set"  size="3" type="text" value='{{ set_sat }}' /></td>
+	 <td style="text-align: right;"><b>hue<br>(?-???)</b></td><td><input id="input4" name="hue_set"  size="3" type="text" value='{{ set_hue }}' /></td></tr><tr>
+	 <td style="text-align: right;"><b>gain<br>(0-127)</b></td><td><input id="input5" name="gain_set"  size="3" type="text" value='{{ set_gain }}' /></td>
+	 <td style="text-align: right;"><b>exposure<br>(-7 to -1) </b></td><td><input id="input6" name="exp_set"  size="3" type="text" value='{{ set_exp }}' /></td></tr><tr>
+	 <td style="text-align: right;"><b>white balance<br>(4000-7000)</b></td><td><input id="input7" name="wbal_set"  size="3" type="text" value='{{ set_wbal }}' /></td>
+	 <td style="text-align: right;"><b>focus<br>(0-255)<br>increment 5</b></td><td><input id="input8" name="focus_set"  size="3" type="text" value='{{ set_focus }}' /></td></tr></table>
+      </div>
+      <div style="text-align: center;"><input name="submit" type="submit" value='update' /> </div>
+	 </form>	  
+    </div>
+
+  	<!-- 3rd row of the streaming video interface: select new mode -->
+	<div class="third row">
+      <div class="one-third column" style="margin-top: 3%"></div>
+      <div class="one-third column" style="margin-top: 3%">
+        <a class="button button-primary u-full-width" href="/camsetup/select">Select new mode</a>
+      </div>
+      <div class="one-third column" style="margin-top: 3%"></div>
+    </div>
+
+  </div>
+
+{% endblock %}
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
