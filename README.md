@@ -15,7 +15,8 @@ Python example code can usually be run using the Thonny IDE on a Pi SBC but sugg
 
 The image taking code also assumes various folders for the storage of different types of 'taken' images and these folders are not always auto-created so the code should be checked so that the appropriate folders can be created before the code is run.
 
-## Raspberry Pi Pico code
+## Raspberry Pi Pico microcontroller code
 Both MicroPython and Arduino IDE (C/C++) example code are provided.
 
-
+## ESP32 microcontroller code
+Just Arduino IDE (C/C++) example code is provided and it was developed and tested using a 38pin ESP32 microcontroller module.
