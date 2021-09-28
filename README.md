@@ -1,4 +1,4 @@
-# starter_maker_kit
+# Starter Maker Kit
  Raspberry Pi and microcontroller code for a starter level digital making kit.
 ![starter maker kit](https://onlinedevices.co.uk/display1390)
 
@@ -26,4 +26,4 @@ For the buzzer_player and LED1_flash_web example code, 'data' is used that needs
 ## ESP8266 microcontroller code
 Just Arduino IDE (C/C++) example code is provided and it was developed and tested using a 30pin ESP8266 microcontroller NodeMCU v1.0 module.
 
-For the buzzer_player and the various LED1_flash_web??? example code, 'data' is used that needs to be loaded into SPIFFS before compiling and uploading the code.
+For the buzzer_player and the various versions of LED1_flash_web*** example code, 'data' is used that needs to be loaded into SPIFFS before compiling and uploading the code.
