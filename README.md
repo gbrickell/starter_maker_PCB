@@ -11,11 +11,13 @@ The code allows a number of different projects to be explored by a 'starter' dig
  - MicroPython code for the Raspberry Pi Pico.
 
 ## Raspberry Pi SBC code
+The code and documentation has been updated to allow for a generalised username instead of the previous default username 'pi' and two installation scripts are provided that not only download all the code and documentation but also install all the various libraries/modules needed by the code.
+
 Example code is provided for the Pi offline versions 1.4, 2 and 3 of Scratch so that any version of a Raspberry Pi SBC that can run Scratch in some form has an option.
 
 Python example code can usually be run using the Thonny IDE on a Raspberry Pi SBC but suggested CLI commands for the pi user are also provided in the code as a comment where the installed folders are assumed to be:
-/home/pi/starter_maker_kit1/RPi_code/starter_ebasics/ for the electronic basics code, and
-/home/pi/starter_maker_kit1/RPi_code/image_taking/  for the image taking code
+/home/YOURUSERNAME/starter_maker_kit1/RPi_code/starter_ebasics/ for the electronic basics code, and
+/home/YOURUSERNAME/starter_maker_kit1/RPi_code/image_taking/ for the image taking code
 
 The image taking code also assumes various folders for the storage of different types of 'taken' images and these folders are not always auto-created so the code should be checked so that the appropriate folders can be created before the code is run.
 
