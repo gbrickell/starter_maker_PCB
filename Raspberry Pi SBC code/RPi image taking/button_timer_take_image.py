@@ -1,7 +1,8 @@
 #!/usr/bin/python
-# RPi kits PCB version of button_timer_take_image.py - timer initiated image taking routine using a button with RGB LED + buzzer indicators
+# Starter Kit PCB version of button_timer_take_image.py - timer initiated image taking routine 
+#    using a button with Red Amber & Green LEDs + buzzer indicators
 #
-# command: python3 /home/pi/starter_maker_kit1/RPi_code/image_taking/button_timer_take_image.py
+# command: python3 ./starter_maker_kit1/RPi_code/image_taking/button_timer_take_image.py
 #
 # this script uses pulse width modulation (PWM) a technique used to control a variety of 
 # devices (motors, servos as well as LEDs) esentially by switching them on and off very very fast
@@ -16,23 +17,27 @@ import RPi.GPIO as GPIO    # this imports the module to allow the GPIO pins to b
 import os                  # this imports the module to allow direct CLI commands to be run
 from builtins import input # allows compatibility for input between Python 2 & 3
 import subprocess
+import pyautogui
+
+# get the current username for use in file storage paths
+user_name = os.getlogin()
 
 # This code sets the RPi to use the BCM (Broadcom) pin numbers which is usually the default but is positively set here
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)   # avoids various warning messages about GPIO pins being already in use
 
-button_pin = 26  # this is the GPIO pin that one side of tactile button 2 is connected to
+button_pin = 26  # this is the GPIO pin that one side of tactile button is connected to
 
 GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)  
 # this is a special setting that indicates when a pin changes from LOW to HIGH ie when the button is pressed
 
-red_positive_pin = 22    # this is the GPIO pin that the RED RGB leg (via the resistor) is connected to
+red_positive_pin = 21    # this is the GPIO pin that the RED RGB leg (via the resistor) is connected to
 
-green_positive_pin = 27  # this is the GPIO pin that the GREEN RGB leg (via the resistor) is connected to
+green_positive_pin = 16  # this is the GPIO pin that the GREEN RGB leg (via the resistor) is connected to
 
-blue_positive_pin = 17   # this is the GPIO pin that the BLUE RGB leg (via the resistor) is connected to
+amber_positive_pin = 20   # this is the GPIO pin that the BLUE RGB leg (via the resistor) is connected to
 
-buzzer_pin = 12          # this is the GPIO pin that the buzzer positive leg is connected to
+buzzer_pin = 19          # this is the GPIO pin that the buzzer positive leg is connected to
 
 GPIO.setup(red_positive_pin, GPIO.OUT)    # this sets the RED GPIO pin to be an output 'type' i.e. it will 
                                           # apply about 3.3V to the pin when it is set HIGH (True)
@@ -40,7 +45,7 @@ GPIO.setup(red_positive_pin, GPIO.OUT)    # this sets the RED GPIO pin to be an 
 GPIO.setup(green_positive_pin, GPIO.OUT)  # this sets the GREEN GPIO pin to be an output 'type' i.e. it will 
                                           # apply about 3.3V to the pin when it is set HIGH (True)
 
-GPIO.setup(blue_positive_pin, GPIO.OUT)   # this sets the BLUE GPIO pin to be an output 'type' i.e. it will 
+GPIO.setup(amber_positive_pin, GPIO.OUT)   # this sets the BLUE GPIO pin to be an output 'type' i.e. it will 
                                           # apply about 3.3V to the pin when it is set HIGH (True)
 
 GPIO.setup(buzzer_pin, GPIO.OUT)    # this sets the buzzer GPIO pin to be an output 'type' i.e. it will apply 
@@ -59,13 +64,13 @@ pwmRed.start(0)                               # this sets an inital Duty Cycle o
 pwmGreen = GPIO.PWM(green_positive_pin, 500)  # this sets a frequency of 500 i.e. 500 cycles per second
 pwmGreen.start(0)                             # this sets an inital Duty Cycle of 0% i.e. off all the time
 
-pwmBlue = GPIO.PWM(blue_positive_pin, 500)    # this sets a frequency of 500 i.e. 500 cycles per second
-pwmBlue.start(0)                              # this sets an inital Duty Cycle of 0% i.e. off all the time
+pwmAmber = GPIO.PWM(amber_positive_pin, 500)    # this sets a frequency of 500 i.e. 500 cycles per second
+pwmAmber.start(0)                              # this sets an inital Duty Cycle of 0% i.e. off all the time
 
 # set LED to red whilst eberything is starting up
 pwmRed.ChangeDutyCycle(100)     # red LED switched to 100% (fully on) by changing the Duty Cycle
 pwmGreen.ChangeDutyCycle(0)     # green LED switched to 0% (off) by changing the Duty Cycle
-pwmBlue.ChangeDutyCycle(0)      # blue LED switched to 0% (off) by changing the Duty Cycle
+pwmAmber.ChangeDutyCycle(0)     # amber LED switched to 0% (off) by changing the Duty Cycle
 time.sleep(1.5)                 # wait for 1.5s just so the red LED is actually seen !
 
 # this is a function to indicate when the button is pressed 
@@ -78,7 +83,8 @@ def btn_pressed():
 time_subfolder = " "
 print (" ")
 print (" ***************************************************************************")
-print (" All button timed images will be stored under /home/pi/RPi_maker_kit5/image_taking/ ")
+print (" All button timed images will be stored under ")
+print (" ./starter_maker_kit1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name")
 print ("   ..... just hit RETURN for the default of 'single_image_timer_folder'")
 while len(time_subfolder) <= 5 or " " in time_subfolder :
@@ -87,14 +93,18 @@ print (" ***********************************************************************
 print (" ")
 
 # build the full path as a text string
-imagefolder = "/home/pi/RPi_maker_kit5/image_taking/" + time_subfolder + "/"
+imagefolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/" + time_subfolder + "/"
 
 # create the directory if it does not exist
 if not os.path.exists(imagefolder):
     os.makedirs(imagefolder)      # execute the folder creation command
-    # create a command string to make sure the new folder is 'owned' by the pi user so that it is easier to manage
-    os_chown_command = "chown -R pi:pi " + imagefolder
-    os.system(os_chown_command)   # execute the file ownership change command
+
+    # if for some reason new file/directory ownership becomes an issue
+    # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
+    # create a command string to make sure the new folder is 'owned' by YOURUSERNAME
+    #os_chown_command = "chown -R YOURUSERNAME:YOURUSERNAME " + imagefolder
+    #os.system(os_chown_command)   # execute the file ownership change command
+
     print (imagefolder + " folder created")
 else:
     print (imagefolder + " already exists, so no need to create it")
@@ -114,7 +124,7 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         # set LED to green to show that the system is ready
         pwmRed.ChangeDutyCycle(0)          # red LED switched to 0% (off) by changing the Duty Cycle
         pwmGreen.ChangeDutyCycle(100)      # green LED switched to 100% (fully on) by changing the Duty Cycle
-        pwmBlue.ChangeDutyCycle(0)         # blue LED switched to 0% (off) by changing the Duty Cycle
+        pwmAmber.ChangeDutyCycle(0)        # amber LED switched to 0% (off) by changing the Duty Cycle
 
         # input the timer duration in seconds
         #  this example shows how to repeat the request if the input is not the required value
@@ -122,25 +132,25 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         while timerduration < 5:
             timerduration = float(input("Enter timer duration in seconds - must be more than 5 seconds? (CTRL C to stop)"))
 
-        print (" press button 2 to start the timer to take a single image or type CTRL-C to stop the program")
+        print (" press button to start the timer to take a single image or type CTRL-C to stop the program")
 
         while not btn_pressed():
             pass           # if the button is not pressed just loop endlessly
 
-        # button 2 pressed so take start the timer and set LED to flash blue whist this is happening
+        # button pressed so take start the timer and set LED to flash amber whist this is happening
         tstart = time.time()
 
-        # now flash the LED blue and beep the buzzer intermittently for the last few seconds whilst the timer runs down
+        # now continuously flash the amber LED and beep the buzzer intermittently for the last few seconds whilst the timer runs down
         while (time.time() - tstart) < timerduration:
             timeleft = timerduration - (time.time() - tstart)
             #print ("time left: " + str(timeleft) + " seconds")
             pwmRed.ChangeDutyCycle(0)        # red LED switched to 0% (off) by changing the Duty Cycle
             pwmGreen.ChangeDutyCycle(0)      # green LED switched to 0% (off) by changing the Duty Cycle
-            pwmBlue.ChangeDutyCycle(100)     # blue LED switched to 100% (fully on) by changing the Duty Cycle
+            pwmAmber.ChangeDutyCycle(100)     # amber LED switched to 100% (fully on) by changing the Duty Cycle
             time.sleep(0.1)
             pwmRed.ChangeDutyCycle(0)        # red LED switched to 0% (off) by changing the Duty Cycle
             pwmGreen.ChangeDutyCycle(0)      # green LED switched to 0% (off) by changing the Duty Cycle
-            pwmBlue.ChangeDutyCycle(0)       # blue LED switched to 0% (off) by changing the Duty Cycle
+            pwmAmber.ChangeDutyCycle(0)       # amber LED switched to 0% (off) by changing the Duty Cycle
             time.sleep(0.1)
             if (timeleft) < 3:     # sound buzzer for last 3 seconds
                 for x in range(0, 200):
@@ -149,10 +159,10 @@ try:    # this loop is not strictly necessary but it does allow the script to be
                     GPIO.output(buzzer_pin, False)
                     time.sleep(half_cycle_time)        
         
-        # timer count down complete - so make sure the LED is still on blue and take image
+        # timer count down complete - so make sure the LED is still on amber and take image
         pwmRed.ChangeDutyCycle(0)        # red LED switched to 0% (off) by changing the Duty Cycle
         pwmGreen.ChangeDutyCycle(0)      # green LED switched to 0% (off) by changing the Duty Cycle
-        pwmBlue.ChangeDutyCycle(100)     # blue LED switched to 100% (fully on) by changing the Duty Cycle
+        pwmAmber.ChangeDutyCycle(100)     # amber LED switched to 100% (fully on) by changing the Duty Cycle
         now = time.strftime("%Y-%m-%d_%H.%M.%S") # get the time and date the button was pressed to be used in the file name
         image_name = imagefolder + "single_image_" + now + ".jpg"    # create the full file name including the path
         print (now + " - count down complete - single image being taken")
@@ -164,9 +174,12 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         # add --flip <direction> where <direction> can be h or v if you do want to flip the image for some reason
         os_image_command = "fswebcam -S 5 -r 640x480 -q --no-banner --jpeg 80 " + image_name  
         os.system(os_image_command)          # take the image using the fswebcam command string
-        # create the command string to make sure the new file is 'owned by the pi user
-        os_chown_command = "chown pi:pi " + image_name
-        os.system(os_chown_command)          # execute the file ownership change command
+
+        # if for some reason new file/directory ownership becomes an issue
+        # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
+        # create a command string to make sure the new ffile is 'owned' by YOURUSERNAME
+        #os_chown_command = "chown YOURUSERNAME:YOURUSERNAME " + image_name
+        #os.system(os_chown_command)   # execute the file ownership change command
 
         time.sleep(1)      # wait a short interval before cycling back to allow the image capture to complete
         print (" ")
@@ -199,9 +212,13 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         print (" ")
         # close the image - if it was shown - before starting the next cycle
         if showimage == "Y" or showimage == "y":
-            image.kill()
+            pyautogui.press('esc')     # simulates pressing the ESC key
 
 finally:  # this code is run when the try is interrupted with a CTRL-C
+    # close the image - if it was shown just before a CTRL-C
+    if showimage == "Y":
+        pyautogui.press('esc')     # simulates pressing the ESC key
+
     print(" ")
     print("Cleaning up the GPIO pins before stopping")
     print(" ")

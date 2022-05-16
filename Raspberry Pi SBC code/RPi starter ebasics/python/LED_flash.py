@@ -1,8 +1,8 @@
 # starter maker kit PCB version of LED_flash.py that flashes a single LED on/off
 
-# command to run this script:  python3 /home/pi/starter_maker_kit1/RPi_code/starter_ebasics/LED_flash.py
+# command to run this script:  python3 ./starter_maker_kit1/RPi_code/starter_ebasics/LED_flash.py
 
-# the file path /home/pi/maker_kit5 will need to be changed if you have stored your code elsewhere
+# the file path ./maker_kit5 will need to be changed if you have stored your code elsewhere
 
 import RPi.GPIO as GPIO   # this imports the module to allow the GPIO pins to be easily utilised
 import time               # this imports the module to allow various time functions to be used

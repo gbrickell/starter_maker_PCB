@@ -1,13 +1,17 @@
 #!/usr/bin/python
 # Starter Kit PCB button_take_video.py - simple video taking routine using a button
 #
-# command: python3 /home/pi/starter_maker_kit1/RPi_code/image_taking/button_take_video.py
+# command: python3 ./starter_maker_kit1/RPi_code/image_taking/button_take_video.py
 #
 
 import time                # this imports the module to allow various simple time functions to be used
 import RPi.GPIO as GPIO    # this imports the module to allow the GPIO pins to be easily utilised
 import os                  # this imports the module to allow direct CLI commands to be run
 from builtins import input # allows compatibility for input between Python 2 & 3
+import pyautogui
+
+# get the current username for use in file storage paths
+user_name = os.getlogin()
 
 # This code sets the RPi to use the BCM (Broadcom) pin numbers which is usually the default but is positively set here
 GPIO.setmode(GPIO.BCM)
@@ -28,7 +32,8 @@ def btn_pressed():
 video_subfolder = " "
 print (" ")
 print (" ***************************************************************************")
-print (" All button triggered videos will be stored under /home/pi/starter_maker_kit1/RPi_code/image_taking/ ")
+print (" All button triggered videos will be stored under ")
+print (" ./starter_maker_kit1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name for your VIDEOs")
 print ("   ..... just hit RETURN for the default of 'button_video_folder'")
 while len(video_subfolder) <= 5 or " " in video_subfolder :
@@ -36,14 +41,18 @@ while len(video_subfolder) <= 5 or " " in video_subfolder :
 print (" ***************************************************************************")
 print (" ")
 
-videofolder = "/home/pi/starter_maker_kit1/RPi_code/image_taking/" + video_subfolder + "/"
+videofolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/" + video_subfolder + "/"
 
 # create the directory if it does not exist
 if not os.path.exists(videofolder):
     os.makedirs(videofolder)      # execute the folder creation command
-    # create a command string to make sure the new folder is 'owned' by the pi user
-    os_chown_command = "chown -R pi:pi " + videofolder
-    os.system(os_chown_command)   # execute the file ownership change command
+
+    # if for some reason new file/directory ownership becomes an issue
+    # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
+    # create a command string to make sure the new folder is 'owned' by YOURUSERNAME
+    #os_chown_command = "chown -R YOURUSERNAME:YOURUSERNAME " + videofolder
+    #os.system(os_chown_command)   # execute the file ownership change command
+
     print (videofolder + " folder created")
 else:
     print (videofolder + " already exists, so no need to create it")
@@ -76,7 +85,7 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         # button pressed so take the video clip.
         now = time.strftime("%Y-%m-%d_%H.%M.%S") # get the time and date the button was pressed to be used in the file name
         video_name = videofolder + "video_clip_" + now + ".avi"    # create the full file name including the path
-        print (now + " - button 2 pressed - video started")
+        print (now + " - button pressed - video started")
         # create the full ffmpeg command string: 
         # create the relatively simple full ffmpeg command string: 
         # video4linux2 (v4l2) format, 640x480 size, input from camera, elapsed time in HH:MM:SS format, output video name
@@ -86,24 +95,18 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         os_video_command = "ffmpeg -f video4linux2 -s 640x480 -i /dev/video0 -t 00:00:" + str(int(clipduration)).zfill(2) + " " + video_name  
         print (os_video_command)
         os.system(os_video_command)          # start the video using the ffmpeg command string
-        # create the command string to make sure the new file is 'owned' by the pi user
-        os_chown_command = "chown pi:pi " + video_name
-        os.system(os_chown_command)          # execute the file ownership change command
+
+        # if for some reason new file/directory ownership becomes an issue
+        # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
+        # create a command string to make sure the new ffile is 'owned' by YOURUSERNAME
+        #os_chown_command = "chown YOURUSERNAME:YOURUSERNAME " + video_name
+        #os.system(os_chown_command)   # execute the file ownership change command
 
         time.sleep(1)      # wait a short interval before cycling back to allow the video capture to complete
         print (" ")
         print (" ***************************************************************")
         print (" video taken and stored as: " + video_name)
         print (" ***************************************************************")
-        print (" ")
-
-        # input the response to showing the video Y/N
-        #  this example shows how to repeat the request if the input is not the required value
-        showvideo = "-"
-        while showvideo != "N" and showvideo != "n" and showvideo != "Y" and showvideo != "y":
-            showvideo = str(input("Do you want to show the captured video now - enter Y or N? "))
-        if showvideo == "Y" or showvideo == "y":
-            os.system("omxplayer --win '300 200 940 680' " + video_name)
         print (" ")
         print (" ")
         print (" ***************************************************************")

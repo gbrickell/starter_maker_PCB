@@ -1,7 +1,8 @@
 #!/usr/bin/python
-# button_timer_take_video.py - video taking routine using a button set timer with RGB LED indicator
+# Starter Kit PCB version of button_timer_take_video.py - timer initiated video clip taking routine 
+#    using a button with Red Amber & Green LEDs + buzzer indicators
 #
-# command: python3 /home/pi/starter_maker_kit1/RPi_code/image_taking/button_timer_take_video.py
+# command: python3 ./starter_maker_kit1/RPi_code/image_taking/button_timer_take_video.py
 #
 # this script uses pulse width modulation (PWM) a technique used to control a variety of 
 # devices (motors, servos as well as LEDs) esentially by switching them on and off very very fast
@@ -15,23 +16,27 @@ import time                # this imports the module to allow various simple tim
 import RPi.GPIO as GPIO    # this imports the module to allow the GPIO pins to be easily utilised
 import os                  # this imports the module to allow direct CLI commands to be run
 from builtins import input # allows compatibility for input between Python 2 & 3
+import pyautogui
+
+# get the current username for use in file storage paths
+user_name = os.getlogin()
 
 # This code sets the RPi to use the BCM (Broadcom) pin numbers which is usually the default but is positively set here
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)   # avoids various warning messages about GPIO pins being already in use
 
-button_pin = 26  # this is the GPIO pin that one side of tactile button 2 is connected to
+button_pin = 26  # this is the GPIO pin that one side of tactile button is connected to
 
 GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)  
 # this is a special setting that indicates when a pin changes from LOW to HIGH ie when the button is pressed
 
-red_positive_pin = 22    # this is the GPIO pin that the RED RGB leg (via the resistor) is connected to
+red_positive_pin = 21    # this is the GPIO pin that the RED RGB leg (via the resistor) is connected to
 
-green_positive_pin = 27  # this is the GPIO pin that the GREEN RGB leg (via the resistor) is connected to
+green_positive_pin = 16  # this is the GPIO pin that the GREEN RGB leg (via the resistor) is connected to
 
-blue_positive_pin = 17   # this is the GPIO pin that the BLUE RGB leg (via the resistor) is connected to
+amber_positive_pin = 20   # this is the GPIO pin that the BLUE RGB leg (via the resistor) is connected to
 
-buzzer_pin = 12          # this is the GPIO pin that the buzzer positive leg is connected to
+buzzer_pin = 19          # this is the GPIO pin that the buzzer positive leg is connected to
 
 GPIO.setup(red_positive_pin, GPIO.OUT)    # this sets the RED GPIO pin to be an output 'type' i.e. it will 
                                           # apply about 3.3V to the pin when it is set HIGH (True)
@@ -39,7 +44,7 @@ GPIO.setup(red_positive_pin, GPIO.OUT)    # this sets the RED GPIO pin to be an 
 GPIO.setup(green_positive_pin, GPIO.OUT)  # this sets the GREEN GPIO pin to be an output 'type' i.e. it will 
                                           # apply about 3.3V to the pin when it is set HIGH (True)
 
-GPIO.setup(blue_positive_pin, GPIO.OUT)   # this sets the BLUE GPIO pin to be an output 'type' i.e. it will 
+GPIO.setup(amber_positive_pin, GPIO.OUT)  # this sets the BLUE GPIO pin to be an output 'type' i.e. it will 
                                           # apply about 3.3V to the pin when it is set HIGH (True)
 
 GPIO.setup(buzzer_pin, GPIO.OUT)    # this sets the buzzer GPIO pin to be an output 'type' i.e. it will apply 
@@ -58,13 +63,13 @@ pwmRed.start(0)                               # this sets an inital Duty Cycle o
 pwmGreen = GPIO.PWM(green_positive_pin, 500)  # this sets a frequency of 500 i.e. 500 cycles per second
 pwmGreen.start(0)                             # this sets an inital Duty Cycle of 0% i.e. off all the time
 
-pwmBlue = GPIO.PWM(blue_positive_pin, 500)    # this sets a frequency of 500 i.e. 500 cycles per second
-pwmBlue.start(0)                              # this sets an inital Duty Cycle of 0% i.e. off all the time
+pwmAmber = GPIO.PWM(amber_positive_pin, 500)  # this sets a frequency of 500 i.e. 500 cycles per second
+pwmAmber.start(0)                             # this sets an inital Duty Cycle of 0% i.e. off all the time
 
 # set LED to red whilst everything is starting up
 pwmRed.ChangeDutyCycle(100)     # red LED switched to 100% (fully on) by changing the Duty Cycle
 pwmGreen.ChangeDutyCycle(0)     # green LED switched to 0% (off) by changing the Duty Cycle
-pwmBlue.ChangeDutyCycle(0)      # blue LED switched to 0% (off) by changing the Duty Cycle
+pwmAmber.ChangeDutyCycle(0)     # amber LED switched to 0% (off) by changing the Duty Cycle
 time.sleep(1.5)                 # wait for 1.5s just so the red LED is actually seen !
 
 # this is a function to indicate when the button is pressed 
@@ -77,7 +82,8 @@ def btn_pressed():
 video_subfolder = " "
 print (" ")
 print (" ***************************************************************************")
-print (" All button timed videos will be stored under /home/pi/RPi_maker_kit5/image_taking/ ")
+print (" All button timed videos will be stored under ")
+print (" ./starter_maker_kit1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name")
 print ("   ..... just hit RETURN for the default of 'button_video_timer_folder'")
 while len(video_subfolder) <= 5 or " " in video_subfolder :
@@ -86,14 +92,18 @@ print (" ***********************************************************************
 print (" ")
 
 # build the full path as a text string
-videofolder = "/home/pi/RPi_maker_kit5/image_taking/" + video_subfolder + "/"
+videofolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/" + video_subfolder + "/"
 
 # create the directory if it does not exist
 if not os.path.exists(videofolder):
     os.makedirs(videofolder)      # execute the folder creation command
-    # create a command string to make sure the new folder is 'owned by the pi user so that it is easier to manage
-    os_chown_command = "chown -R pi:pi " + videofolder
-    os.system(os_chown_command)   # execute the file ownership change command
+
+    # if for some reason new file/directory ownership becomes an issue
+    # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
+    # create a command string to make sure the new folder is 'owned' by YOURUSERNAME
+    #os_chown_command = "chown -R YOURUSERNAME:YOURUSERNAME " + videofolder
+    #os.system(os_chown_command)   # execute the file ownership change command
+
     print (videofolder + " folder created")
 else:
     print (videofolder + " already exists, so no need to create it")
@@ -114,7 +124,7 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         # set LED to green to show that the system is ready
         pwmRed.ChangeDutyCycle(0)          # red LED switched to 0% (off) by changing the Duty Cycle
         pwmGreen.ChangeDutyCycle(100)      # green LED switched to 100% (fully on) by changing the Duty Cycle
-        pwmBlue.ChangeDutyCycle(0)         # blue LED switched to 0% (off) by changing the Duty Cycle
+        pwmAmber.ChangeDutyCycle(0)         # amber LED switched to 0% (off) by changing the Duty Cycle
 
         # input the timer duration in seconds
         #  this example shows how to repeat the request if the input is not the required value
@@ -136,7 +146,7 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         print (" ***************************************************************************")
         print (" ")
 
-        print ("press button 2 to start the timer countdown before taking a short video clip or type CTRL-C to stop the program")
+        print ("press button to start the timer countdown before taking a short video clip or type CTRL-C to stop the program")
         print (" ")
 
         while not btn_pressed():
@@ -145,17 +155,17 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         # button pressed so take start the timer and set LED to flash yellow whist this is happening
         tstart = time.time()
 
-        # now flash the LED blue and beep the buzzer intermittently for the last few seconds whilst the timer runs down
+        # now flash the LED amber and beep the buzzer intermittently for the last few seconds whilst the timer runs down
         while (time.time() - tstart) < timerduration:
             timeleft = timerduration - (time.time() - tstart)
             #print ("time left: " + str(timeleft) + " seconds")
             pwmRed.ChangeDutyCycle(0)        # red LED switched to 0% (off) by changing the Duty Cycle
             pwmGreen.ChangeDutyCycle(0)      # green LED switched to 0% (off) by changing the Duty Cycle
-            pwmBlue.ChangeDutyCycle(100)     # blue LED switched to 100% (fully on) by changing the Duty Cycle
+            pwmAmber.ChangeDutyCycle(100)     # amber LED switched to 100% (fully on) by changing the Duty Cycle
             time.sleep(0.1)
             pwmRed.ChangeDutyCycle(0)        # red LED switched to 0% (off) by changing the Duty Cycle
             pwmGreen.ChangeDutyCycle(0)      # green LED switched to 0% (off) by changing the Duty Cycle
-            pwmBlue.ChangeDutyCycle(0)       # blue LED switched to 0% (off) by changing the Duty Cycle
+            pwmAmber.ChangeDutyCycle(0)       # amber LED switched to 0% (off) by changing the Duty Cycle
             time.sleep(0.1)
             if (timeleft) < 3:     # sound buzzer for last 3 seconds
                 for x in range(0, 200):
@@ -164,10 +174,10 @@ try:    # this loop is not strictly necessary but it does allow the script to be
                     GPIO.output(buzzer_pin, False)
                     time.sleep(half_cycle_time)        
         
-        # timer count down complete - so make sure the LED is still on blue and take video
+        # timer count down complete - so make sure the LED is still on amber and take video
         pwmRed.ChangeDutyCycle(0)        # red LED switched to 0% (off) by changing the Duty Cycle
         pwmGreen.ChangeDutyCycle(0)      # green LED switched to 0% (off) by changing the Duty Cycle
-        pwmBlue.ChangeDutyCycle(100)     # blue LED switched to 100% (fully on) by changing the Duty Cycle
+        pwmAmber.ChangeDutyCycle(100)     # amber LED switched to 100% (fully on) by changing the Duty Cycle
 
         now = time.strftime("%Y-%m-%d_%H.%M.%S") # get the time and date the button was pressed to be used in the file name
         video_name = videofolder + "video_clip_" + now + ".avi"    # create the full file name including the path
@@ -180,9 +190,12 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         os_video_command = "ffmpeg -f video4linux2 -s 640x480 -i /dev/video0 -t 00:00:" + str(int(clipduration)).zfill(2) + " " + video_name  
         print (os_video_command)
         os.system(os_video_command)          # start the video using the ffmpeg command string
-        # create the command string to make sure the new file is 'owned by the pi user so that it is easier to manage
-        os_chown_command = "chown pi:pi " + video_name
-        os.system(os_chown_command)          # execute the file ownership change command
+
+        # if for some reason new file/directory ownership becomes an issue
+        # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
+        # create a command string to make sure the new ffile is 'owned' by YOURUSERNAME
+        #os_chown_command = "chown YOURUSERNAME:YOURUSERNAME " + video_name
+        #os.system(os_chown_command)   # execute the file ownership change command
 
         time.sleep(1)      # wait a short interval before cycling back to allow the video capture to complete
 
@@ -191,14 +204,6 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         print (" video taken and stored as: " + video_name)
         print (" ***************************************************************")
         print (" ")
-
-        # input the response to showing the video Y/N
-        #  this example shows how to repeat the request if the input is not the required value
-        showvideo = "-"
-        while showvideo != "N" and showvideo != "Y":
-            showvideo = str(input("Do you want to show the captured video now - enter Y or N? "))
-        if showvideo == "Y":
-            os.system("omxplayer --win '300 200 940 680' " + video_name)
         print (" ")
         print (" ")
         print (" ***************************************************************")

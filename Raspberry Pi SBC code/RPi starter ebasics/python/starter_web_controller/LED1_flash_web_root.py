@@ -7,7 +7,7 @@
 # 
 # the CLI command text below is for when the app is in the standard folder
 #  BUT this will need to be updated for the individual installation/user name which may be different
-# command to run: sudo python3 /home/pi/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_root.py
+# command to run: sudo python3 ./starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_root.py
 #
 # Please note that this 'root' version of the app CANNOT be run from the Thonny IDE
 

@@ -1,6 +1,6 @@
 # starter maker kit PCB version of LED_button_flash.py that lights a single LED 'on' for 3 secs and then 'off' when a button is pressed
 
-# command to run this script:  python3 /home/pi/starter_maker_kit1/RPi_code/starter_ebasics/LED_button_flash.py
+# command to run this script:  python3 ./starter_maker_kit1/RPi_code/starter_ebasics/LED_button_flash.py
 
 import RPi.GPIO as GPIO   # this imports the module to allow the GPIO pins to be easily utilised
 import time               # this imports the module to allow various time functions to be used

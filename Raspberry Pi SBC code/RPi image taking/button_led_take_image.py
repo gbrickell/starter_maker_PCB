@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # Starter Kit PCB - image taking routine using a button with Red Amber and Green LED indicator
 #
-# command: python3 /home/pi/starter_maker_kit1/RPi_code/image_taking/button_led_take_image.py
+# command: python3 ./starter_maker_kit1/RPi_code/image_taking/button_led_take_image.py
 #
 # this script introduces the use of pulse width modulation (PWM) a technique used to control a variety of 
 # devices (motors, servos as well as LEDs) esentially by switching them on and off very very fast
@@ -16,12 +16,16 @@ import RPi.GPIO as GPIO    # this imports the module to allow the GPIO pins to b
 import os                  # this imports the module to allow direct CLI commands to be run
 from builtins import input # allows compatibility for input between Python 2 & 3
 import subprocess
+import pyautogui
+
+# get the current username for use in file storage paths
+user_name = os.getlogin()
 
 # This code sets the RPi to use the BCM (Broadcom) pin numbers which is usually the default but is positively set here
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)   # avoids various warning messages about GPIO pins being already in use 
 
-button_pin = 26  # this is the GPIO pin that one side of the tactile button is connected to
+button_pin = 26  # this is the GPIO pin that one side of the bottom tactile button (2) is connected to
 
 GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)  
 # this is a special setting that indicates when a pin changes from LOW to HIGH ie when the button is pressed
@@ -68,23 +72,28 @@ def btn_pressed():
 # define the folder where images will be stored
 time_subfolder = " "
 print (" ")
-print (" ****************************************************************************************************")
-print (" All button triggered images will be stored under /home/pi/starter_maker_kit1/RPi_code/image_taking/ ")
+print (" ***************************************************************************")
+print (" All button triggered images will be stored under ")
+print (" ./starter_maker_kit1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name")
 print ("   ..... just hit RETURN for the default of 'single_image_led_folder'")
 while len(time_subfolder) <= 5 or " " in time_subfolder :
     time_subfolder = input(" Enter sub-folder name - must be more than 5 characters and no spaces (CTRL C to stop? )") or "single_image_led_folder"
-print (" ****************************************************************************************************")
+print (" ***************************************************************************")
 print (" ")
 
-imagefolder = "/home/pi/starter_maker_kit1/RPi_code/image_taking/" + time_subfolder + "/"
+imagefolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/" + time_subfolder + "/"
 
 # create the directory if it does not exist
 if not os.path.exists(imagefolder):
     os.makedirs(imagefolder)      # execute the folder creation command
-    # create a command string to make sure the new folder is 'owned' by the pi user
-    os_chown_command = "chown -R pi:pi " + imagefolder
-    os.system(os_chown_command)   # execute the file ownership change command
+
+    # if for some reason new file/directory ownership becomes an issue
+    # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
+    # create a command string to make sure the new folder is 'owned' by YOURUSERNAME
+    #os_chown_command = "chown -R YOURUSERNAME:YOURUSERNAME " + imagefolder
+    #os.system(os_chown_command)   # execute the file ownership change command
+
     print (imagefolder + " folder created")
 else:
     print (imagefolder + " already exists, so no need to create it")
@@ -124,15 +133,18 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         # add --flip <direction> where <direction> can be h or v if you do want to flip the image for some reason
         os_image_command = "fswebcam -S 5 -r 640x480 -q --no-banner --jpeg 80 " + image_name  
         os.system(os_image_command)          # take the image using the fswebcam command string
-        # create the command string to make sure the new file is 'owned' by the pi usert
-        os_chown_command = "chown pi:pi " + image_name
-        os.system(os_chown_command)          # execute the file ownership change command
+
+        # if for some reason new file/directory ownership becomes an issue
+        # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
+        # create a command string to make sure the new ffile is 'owned' by YOURUSERNAME
+        #os_chown_command = "chown YOURUSERNAME:YOURUSERNAME " + image_name
+        #os.system(os_chown_command)   # execute the file ownership change command
 
         time.sleep(1)      # wait a short interval before cycling back to allow the image capture to complete
         print (" ")
-        print (" *************************************************************************************************************")
+        print (" ***************************************************************")
         print (" image taken and stored as: " + image_name)
-        print (" *************************************************************************************************************")
+        print (" ***************************************************************")
         print (" ")
 
         # input the response to showing the image just taken Y/N
@@ -160,13 +172,13 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         print (" press the button again to take another single image or type CTRL-C to stop the program")
         # close the image - if it was shown - before starting the next cycle
         if showimage == "Y" or showimage == "y":
-            image.kill()
+            pyautogui.press('esc')     # simulates pressing the ESC key
 
 
 finally:  # this code is run when the try is interrupted with a CTRL-C
     # close the image - if it was shown just before a CTRL-C
     if showimage == "Y":
-        image.kill()
+        pyautogui.press('esc')     # simulates pressing the ESC key
 
     print(" ")
     print("Cleaning up the GPIO pins before stopping")

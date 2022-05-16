@@ -3,7 +3,7 @@
 # This is free and unencumbered software released into the public domain.
 
 # updated for use with starter maker kit 1 May'21
-# command: python3 /home/pi/starter_maker_kit1/RPi_code/starter_ebasics/buzzer_player.py
+# command: python3 ./starter_maker_kit1/RPi_code/starter_ebasics/buzzer_player.py
 #
 # Anyone is free to copy, modify, publish, use, compile, sell, or
 # distribute this software, either in source code form or as a compiled

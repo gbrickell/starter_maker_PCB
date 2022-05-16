@@ -7,7 +7,7 @@
 # 
 # the CLI command text below is for when the app is in the standard folder
 #  BUT this will need to be updated for the individual installation/user name which may be different
-# command to run: python3 /home/pi/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_user.py
+# command to run: python3 ./starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_user.py
 #
 # But this can also be run from the Thonny IDE
 
@@ -353,7 +353,7 @@ def run_led_lights(led_command=None):
 
 ##################################################################################
 # the code below is the last code in the system
-# when running a Flask server you need sudo access to use the normal HTTP port 80
+# when running a Flask server you need sudo access to use the noaml HTTP port 80
 # without sudo a non-standard port must be used e.g. 8000 is used below
 ##################################################################################
 
