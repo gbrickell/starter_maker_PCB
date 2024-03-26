@@ -1,9 +1,9 @@
-# Starter Maker Kit
- Documentation plus Raspberry Pi and microcontroller code for a starter level digital maker kit.
+# Starter Maker PCB
+ Documentation plus Raspberry Pi and microcontroller code for a starter level digital maker PCB.
 
-![starter maker kit](https://onlinedevices.co.uk/display1390)
+![starter maker PCB](https://onlinedevices.org.uk/display1390)
 
-A 'starter' maker kit that uses just a few basic electronic components, as shown above, and can be connected to any of the main single board computer (SBC) Raspberry Pi's or a number of different microcontrollers - [more detailed project information here](https://onlinedevices.co.uk/Starter+Maker+Kit) and the designs for an associated custom 3D printed component can be downloaded from [here](https://www.prusaprinters.org/prints/67963-pcb-support-foot)
+A 'starter' maker PCB that uses just a few basic electronic components, as shown above, and can be connected to any of the main single board computer (SBC) Raspberry Pi's or a number of different microcontrollers - [more detailed project information here](https://onlinedevices.org.uk/Starter+Maker+PCB) and the designs for an associated custom 3D printed component can be downloaded from [here](https://www.prusaprinters.org/prints/67963-pcb-support-foot)
 
 The code allows a number of different projects to be explored by a 'starter' digital maker.
  - Scratch and Python code is available for the family of Raspberry Pi SBCs,  
