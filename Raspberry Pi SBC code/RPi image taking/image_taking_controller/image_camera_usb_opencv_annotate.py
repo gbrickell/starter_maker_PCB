@@ -134,9 +134,10 @@ class Camera():
             CPU_temp = getCPUtemperature()
             # construct a command to 'annotate' the image file
             annotation1 = " CPU:" + CPU_temp + "degC "
-            os_image_command1 = "convert " + filename + " -font Courier -undercolor black -pointsize " + textsize + " -fill white -annotate " + textpos1 + " " + now + " " + filename
+            # some common fonts available within imagemagick/convert: Lato-Regular, Courier-Bold, Helvetica, Times-Roman
+            os_image_command1 = "convert " + filename + " -font Helvetica -undercolor black -pointsize " + textsize + " -fill white -annotate " + textpos1 + " " + now + " " + filename
             os.system(os_image_command1) # execute command1
-            os_image_command2 = "convert " + filename + " -font Courier -undercolor black -pointsize " + textsize + " -fill white -annotate " + textpos2 + " " + annotation1 + " " + filename
+            os_image_command2 = "convert " + filename + " -font Helvetica -undercolor black -pointsize " + textsize + " -fill white -annotate " + textpos2 + " " + annotation1 + " " + filename
             os.system(os_image_command2) # execute command2
             frame_state = "OK"
         else:

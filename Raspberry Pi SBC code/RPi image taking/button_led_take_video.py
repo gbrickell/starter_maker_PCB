@@ -16,6 +16,8 @@ import RPi.GPIO as GPIO    # this imports the module to allow the GPIO pins to b
 import os                  # this imports the module to allow direct CLI commands to be run
 from builtins import input # allows compatibility for input between Python 2 & 3
 import pyautogui
+import subprocess
+import re
 
 # get the current username for use in file storage paths
 user_name = os.getlogin()
@@ -87,11 +89,10 @@ videofolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/
 if not os.path.exists(videofolder):
     os.makedirs(videofolder)      # execute the folder creation command
 
-    # if for some reason new file/directory ownership becomes an issue
-    # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
-    # create a command string to make sure the new folder is 'owned' by YOURUSERNAME
-    #os_chown_command = "chown -R YOURUSERNAME:YOURUSERNAME " + videofolder
-    #os.system(os_chown_command)   # execute the file ownership change command
+    # in some circumstances new file/directory ownership may become an issue
+    # so the lines below create a command string to make sure the new directory and its files are 'owned' by 'user_name'
+    os_chown_command = "chown -R " + user_name +":" + user_name + " " + videofolder
+    os.system(os_chown_command)   # execute the file ownership change command
 
     print (videofolder + " folder created")
 else:
@@ -103,6 +104,22 @@ print (" ")
 # only use characters that are allowed in Windows files or 
 # the file will not download from the Pi to a Windows machine
 now = time.strftime("%Y-%m-%d_%H.%M.%S")   # this creates a string in a designated format e.g. YYYY-mm-dd_HH.MM.SS
+
+# check where the USB camera is connected
+lsdevres = subprocess.getoutput('ls /dev/')
+if len(re.findall("video0", lsdevres)) > 0 :
+    print ("/dev/video0 is present")
+    usb_device = "/dev/video0"
+elif len(re.findall("video1", lsdevres)) > 0 :
+    print ("/dev/video1 is present")
+    usb_device = "/dev/video1"
+elif len(re.findall("video2", lsdevres)) > 0 :
+    print ("/dev/video1 is present")
+    usb_device = "/dev/video2"
+else:
+    print ("no USB camera is present - exiting the program")
+    usb_device = "exit"
+    sys.exit()
 
 print (now + " - program running: type CTRL-C to stop the program")
 print (" ")
@@ -141,15 +158,15 @@ try:    # this loop is not strictly necessary but it does allow the script to be
         # the example below does not have any rotate options which may be needed
         # add '-vf transpose=clock' for 90 degrees - use transpose=cclock for -90 or 270 degrees 
         #     and use transpose=clock,transpose=clock for 180 degrees ie do it twice
-        os_video_command = "ffmpeg -f video4linux2 -s 640x480 -i /dev/video0 -t 00:00:" + str(int(clipduration)).zfill(2) + " " + video_name  
+        # usb_device is determined earlier to set the -d parameter for where the USB camera is connected
+        os_video_command = "ffmpeg -f video4linux2 -s 640x480 -i " + usb_device + " -t 00:00:" + str(int(clipduration)).zfill(2) + " " + video_name  
         print (os_video_command)
         os.system(os_video_command)          # start the video using the ffmpeg command string
 
-        # if for some reason new file/directory ownership becomes an issue
-        # uncomment the lines below changing YOURUSERNAME to 'your user name' :-)
-        # create a command string to make sure the new ffile is 'owned' by YOURUSERNAME
-        #os_chown_command = "chown YOURUSERNAME:YOURUSERNAME " + video_name
-        #os.system(os_chown_command)   # execute the file ownership change command
+        # in some circumstances new file/directory ownership may become an issue
+        # so the lines below create a command string to make sure the new file is 'owned' by 'user_name'
+        os_chown_command = "chown " + user_name +":" + user_name + " " + video_name
+        os.system(os_chown_command)   # execute the file ownership change command
 
         time.sleep(1)      # wait a short interval before cycling back to allow the video capture to complete
         print (" ")
