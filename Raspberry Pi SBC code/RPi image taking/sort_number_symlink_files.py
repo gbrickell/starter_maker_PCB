@@ -15,15 +15,15 @@ from builtins import input # allows compatibility for input between Python 2 & 3
 user_name = os.getlogin()
 
 # define the folder where the symlinks to the actual images will be created
-symlink_subfolder = " "   # give the variable an initial value
+symlink_subfolder = " "   # give the variable an initial null value
 print (" ")
-print (" ***************************************************************************")
-print (" All symlinks to the images will be stored under ./RPi_maker_kit5/image_taking/ ")
+print (" **************************************************************************************************************")
+print (" All symlinks to the images will be stored under /home/"+user_name+"/starter_maker_kit1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name for the ** SYMLINKS **")
 print ("   ..... just hit RETURN for the default of 'symlink_default_folder'")
 while len(symlink_subfolder) <= 5 or " " in symlink_subfolder :
     symlink_subfolder = input(" Enter sub-folder name - must be more than 5 characters and no spaces (CTRL C to stop? )") or "symlink_default_folder"
-print (" ***************************************************************************")
+print (" **************************************************************************************************************")
 print (" ")
 
 # build the full path as a text string
@@ -33,25 +33,29 @@ symlink_directory = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_t
 # this creates the folder on the default SD card
 if not os.path.exists(symlink_directory):
     os.makedirs(symlink_directory)
+    print (symlink_directory + " folder created")
+else:
+    print (symlink_directory + " already exists, so no need to create it")
+print (" ")
 
-# create the command string to make sure the symlink folder and files are 'owned' by the pi user so that they are easier to manage
-os_chown_command = "chown -R pi:pi " + symlink_directory
-os.system(os_chown_command)          # execute the file ownership change command
+# create the command string to make sure the symlink folder and files are 'owned' by the user so that they are easier to manage
+os_chown_command = "chown -R " + user_name +":" + user_name + " " + symlink_directory
+os.system(os_chown_command)   # execute the file ownership change command
 
-image_subfolder =  " "   # give the variable an initial value
+image_subfolder =  " "   # give the variable an null initial value
 # set the target directory where the individual timestamped time lapsed images files have been stored
 print (" ")
-print (" -----------------------------------------------------------------------------")
-print (" All the captured individual images will have been stored under ./RPi_maker_kit5/image_taking/ ")
+print (" ----------------------------------------------------------------------------------------------------------------------------")
+print (" All the captured individual images will have been stored under /home/"+user_name+"/starter_maker_kit1/RPi_code/image_taking/")
 print ("   ..... but you must now enter the subfolder name that has been used for the ** STORED IMAGES **")
-print ("   ..... just hit RETURN for the default of 'stored_image_folder'")
-while not os.path.exists("./RPi_maker_kit5/image_taking/" + image_subfolder):
-    image_subfolder = input(" Enter sub-folder name - which must exist (CTRL C to stop? )") or "stored_image_folder"
-print (" -----------------------------------------------------------------------------")
+print ("   ..... just hit RETURN for the default of 'timelapse_image_folder'")
+while not os.path.exists("./starter_maker_kit1/RPi_code/image_taking/" + image_subfolder):
+    image_subfolder = input(" Enter sub-folder name - which must exist (CTRL C to stop? )") or "timelapse_image_folder"
+print (" ----------------------------------------------------------------------------------------------------------------------------")
 print (" ")
 
 # build the full path as a text string
-target_directory = "./RPi_maker_kit5/image_taking/" + image_subfolder + "/"
+target_directory = "/home/"+user_name+"/starter_maker_kit1/RPi_code/image_taking/" + image_subfolder + "/"
 
 # set the system to be in the target directory
 #os.chdir(target_directory)
