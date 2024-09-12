@@ -1,7 +1,7 @@
 # Starter Maker PCB
  Documentation plus Raspberry Pi and microcontroller code for a starter level digital maker PCB.
 
-![starter maker PCB](https://onlinedevices.org.uk/display1390)
+ &nbsp; &nbsp; <img src="images\annotated_assembled_starter_kit01_500w.jpg">
 
 A 'starter' maker PCB that uses just a few basic electronic components, as shown above, and can be connected to any of the main single board computer (SBC) Raspberry Pi's or a number of different microcontrollers - [more detailed project information here](https://onlinedevices.org.uk/Starter+Maker+PCB) and the designs for an associated custom 3D printed component can be downloaded from [here](https://www.prusaprinters.org/prints/67963-pcb-support-foot)
 
@@ -10,12 +10,22 @@ The code allows a number of different projects to be explored by a 'starter' dig
  - Arduino IDE (C/C++) for the Raspberry Pi Pico, ESP8266 and ESP32 microcontrollers, plus 
  - MicroPython code for the Raspberry Pi Pico.
 
+## Custom PCB design
+
+The custom PCB (v1.0) was designed using KiCAD and the layout has been defined to allow a connector to attach to any Raspberry Pi and a range of microcontrollers, and a set of components that are needed to build a fully populated module.
+
+<img src="images/Starter_kit_PCB01_front_900w.jpg" width="139" height="180"> &nbsp; &nbsp; <img src="images/Starter_kit_PCB01_20210518_133032651.NIGHT_900w.jpg" width="174" height="180"> &nbsp; &nbsp; <img src="images/Starter_kit_PCB01_20210518_132216142_900w.jpg" width="193" height="180">  
+
+Gerber files for the PCB design can be downloaded from the PCB_design_files folder.
+
 ## Raspberry Pi SBC code
-The code and documentation has been updated to allow for a generalised username instead of the previous default username 'pi' and two installation scripts are provided that not only download all the code and documentation but also install all the various libraries/modules needed by the code.
+The code and documentation has been updated to allow for a generalised username instead of the previous default username 'pi', and for the use of Python using the Bookworm OS the use of a Virtual Environment is described. 
+
+Two installation scripts are also provided that not only download all the code and documentation but also install all the various libraries/modules needed by the code.
 
 Example code is provided for the Pi offline versions 1.4, 2 and 3 of Scratch so that any version of a Raspberry Pi SBC that can run Scratch in some form has an option.
 
-Python example code can usually be run using the Thonny IDE on a Raspberry Pi SBC but suggested CLI commands for the pi user are also provided in the code as a comment where the installed folders are assumed to be:
+Python example code can usually be run using the Thonny IDE on a Raspberry Pi SBC but suggested CLI commands for the user are also provided in the code as a comment where the installed folders are assumed to be:
 /home/YOURUSERNAME/starter_maker_kit1/RPi_code/starter_ebasics/ for the electronic basics code, and
 /home/YOURUSERNAME/starter_maker_kit1/RPi_code/image_taking/ for the image taking code
 
