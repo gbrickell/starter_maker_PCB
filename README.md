@@ -32,14 +32,14 @@ Python example code can usually be run using the Thonny IDE on a Raspberry Pi SB
 The image taking code also assumes various folders for the storage of different types of 'taken' images and these folders are not always auto-created so the code should be checked so that the appropriate folders can be created before the code is run.
 
 ## Raspberry Pi Pico microcontroller code
-Both MicroPython and Arduino IDE (C/C++) example code are provided.
+Both MicroPython and Arduino IDE (C/C++) example code are provided in separate folders, plus two .zip files that each conveniently have the code, the main user documentation PDF and short MicroPython and C/C++ usage PDF notes.
 
 ## ESP32 microcontroller code
-Just Arduino IDE (C/C++) example code is provided and it was developed and tested using a 38pin ESP32 microcontroller module.
+Just Arduino IDE (C/C++) example code is provided in a separate folder that was developed and tested using a 38pin ESP32 microcontroller module. In addition a .zip file is provided in the documentation folder that conveniently has the code, the main user documentation PDF and a short C/C++ usage PDF note.
 
-For the buzzer_player and LED1_flash_web example code, 'data' is used that needs to be loaded into SPIFFS before compiling and uploading the code.
+For the buzzer_player and LED1_flash_web example code, 'data' is used that needs to be loaded into the microcontroller SPIFFS before compiling and uploading the code.
 
 ## ESP8266 microcontroller code
-Just Arduino IDE (C/C++) example code is provided and it was developed and tested using a 30pin ESP8266 microcontroller NodeMCU v1.0 module.
+Just Arduino IDE (C/C++) example code is provided in a separate folder that was developed and tested using a 30pin ESP8266 microcontroller NodeMCU v1.0 module. In addition a .zip file is provided in the documentation folder that conveniently has the code, the main user documentation PDF and a short C/C++ usage PDF note.
 
-For the buzzer_player and the various versions of the LED1_flash_web*** example code, 'data' is used that needs to be loaded into SPIFFS before compiling and uploading the code.
+For the buzzer_player and the various versions of the LED1_flash_web*** example code, 'data' is used that needs to be loaded into the microcontroller SPIFFS before compiling and uploading the code.
