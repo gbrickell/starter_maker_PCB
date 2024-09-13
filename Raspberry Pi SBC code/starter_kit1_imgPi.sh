@@ -30,13 +30,13 @@ mkdir /home/$uservarname/starter_maker_kit1/RPi_code
 echo " Downloading the documentation"
 
 # 1. download the readme01.txt file and store it in the designated folder on the Raspberry Pi
-wget -O /home/$uservarname/starter_maker_kit1/starter_kit1_imgPi_readme.txt https://onlinedevices.org.uk/dl1431
+wget -O /home/$uservarname/starter_maker_kit1/starter_maker_pcb_imgPi_readme.txt https://onlinedevices.org.uk/dl1431
 
 # 2. download the "Getting Started" PDF and store it in the designated folder on the Raspberry Pi
-wget -O /home/$uservarname/starter_maker_kit1/starter_maker_kit1_getting_started.pdf https://onlinedevices.org.uk/dl1432
+wget -O /home/$uservarname/starter_maker_kit1/starter_maker_pcb_getting_started.pdf https://onlinedevices.org.uk/dl1432
 
 # 3. download the "Starter Maker Kit Usage Documentation" PDF and store it in the designated folder on the Raspberry Pi
-wget -O /home/$uservarname/starter_maker_kit1/starter_maker_kit1_usage _documentation.pdf https://onlinedevices.org.uk/dl1433
+wget -O /home/$uservarname/starter_maker_kit1/starter_maker_pcb_usage_documentation.pdf https://onlinedevices.org.uk/dl1433
 
 # install all the libraries needed
 
