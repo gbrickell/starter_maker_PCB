@@ -32,7 +32,7 @@ Python example code can usually be run using the Thonny IDE on a Raspberry Pi SB
 The image taking code also assumes various folders for the storage of different types of 'taken' images and these folders are not always auto-created so the code should be checked so that the appropriate folders can be created before the code is run.
 
 ## Raspberry Pi Pico microcontroller code
-Both MicroPython and Arduino IDE (C/C++) example code are provided in separate folders, plus two .zip files that each conveniently have the code, the main user documentation PDF and short MicroPython and C/C++ usage PDF notes.
+Both MicroPython and Arduino IDE (C/C++) example code are provided in separate folders, plus two .zip files are provided in the documentation folder that each conveniently have the code, the main user documentation PDF and short MicroPython or C/C++ usage PDF notes.
 
 ## ESP32 microcontroller code
 Just Arduino IDE (C/C++) example code is provided in a separate folder that was developed and tested using a 38pin ESP32 microcontroller module. In addition a .zip file is provided in the documentation folder that conveniently has the code, the main user documentation PDF and a short C/C++ usage PDF note.
