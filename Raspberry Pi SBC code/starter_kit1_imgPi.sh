@@ -14,7 +14,7 @@ echo "Hello - please input the Raspberry Pi user name where everything will be s
 read uservarname
 
 # check the script file size is correct as a simple check that the download was OK: size to be updated whenever the script changes
-scriptsize=$(stat --format=%s "/home/$uservarname/starter_kit1_imgPi.sh")
+scriptsize=$(stat --format=%s "/home/$uservarname/starter_PCB1_imgPi.sh")
 echo " downloaded script file size: " $scriptsize
 if [ $scriptsize -gt 8100 ] && [ $scriptsize -lt 8300 ]
 then
@@ -116,7 +116,7 @@ echo " "
 echo " "
 
 # now remove the script so that it can be run again if necessary
-rm starter_kit1_imgPi.sh
+rm starter_PCB1_imgPi.sh
 
 
 else

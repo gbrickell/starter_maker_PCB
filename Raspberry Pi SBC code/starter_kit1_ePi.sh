@@ -14,7 +14,7 @@ echo "Hello - please input the Raspberry Pi user name where everything will be s
 read uservarname
 
 # check the script file size is correct as a simple check that the download was OK: size to be updated whenever the script changes
-scriptsize=$(stat --format=%s "/home/$uservarname/starter_kit1_ePi.sh")
+scriptsize=$(stat --format=%s "/home/$uservarname/starter_PCB1_ePi.sh")
 echo " downloaded script file size: " $scriptsize
 if [ $scriptsize -gt 8200 ] && [ $scriptsize -lt 8400 ]
 then
@@ -106,13 +106,13 @@ wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch3/
 
 echo " All downloads are now complete."
 echo " "
-echo " Please read the downloaded starter_kit1_ePi_readme.txt file to see the latest information regarding "
+echo " Please read the downloaded starter_PCB1_ePi_readme.txt file to see the latest information regarding "
 echo " this kit and advice on how you can dispose of it, if or when you are finished with it."
 echo " "
 echo " "
 
 # now remove the script so that it can be run again if necessary
-rm starter_kit1_ePi.sh
+rm starter_PCB1_ePi.sh
 
 
 else
