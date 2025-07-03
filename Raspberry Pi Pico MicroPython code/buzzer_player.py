@@ -1,6 +1,6 @@
 # Starter Maker Kit version of buzzer_player.py that that plays various tunes
-# Run from Thonny using the file that may be stored at /home/pi/starter_maker_kit1/Pico_MPcode/buzzer_player.py
-# the file path /home/pi/starter_maker_kit1/Pico_MPcode will need to be changed if you have stored your code elsewhere
+# Run from Thonny using the file that may be stored at /home/pi/starter_maker_PCB1/Pico_MPcode/buzzer_player.py
+# the file path /home/pi/starter_maker_PCB1/Pico_MPcode will need to be changed if you have stored your code elsewhere
 
 import machine   # this imports the main Pico library that allows the GPIO pins and many other things to be easily utilised
 from machine import Pin

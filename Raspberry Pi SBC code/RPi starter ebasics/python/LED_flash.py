@@ -1,6 +1,6 @@
 # starter maker kit PCB version of LED_flash.py that flashes a single LED on/off
 
-# command to run this script:  python3 ./starter_maker_kit1/RPi_code/starter_ebasics/LED_flash.py
+# command to run this script:  python3 ./starter_maker_PCB1/RPi_code/starter_ebasics/LED_flash.py
 
 # the file path ./maker_kit5 will need to be changed if you have stored your code elsewhere
 

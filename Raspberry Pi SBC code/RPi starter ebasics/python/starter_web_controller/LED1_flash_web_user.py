@@ -7,7 +7,7 @@
 # 
 # the CLI command text below is for when the app is in the standard folder
 #  BUT this will need to be updated for the individual installation/user name which may be different
-# command to run: python3 ./starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_user.py
+# command to run: python3 ./starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_user.py
 #
 # But this can also be run from the Thonny IDE
 

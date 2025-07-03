@@ -1,7 +1,7 @@
 # starter maker kit PCB version of LED_button_buzzer.py that lights a RED LED 
 #   and sounds a passive buzzer for 'duration' (3) secs when a button is pressed
 
-# command to run this script:  python3 ./starter_maker_kit1/RPi_code/starter_ebasics/LED_button_buzzer.py
+# command to run this script:  python3 ./starter_maker_PCB1/RPi_code/starter_ebasics/LED_button_buzzer.py
 
 import RPi.GPIO as GPIO   # this imports the module to allow the GPIO pins to be easily utilised
 import time               # this imports the module to allow various time functions to be used

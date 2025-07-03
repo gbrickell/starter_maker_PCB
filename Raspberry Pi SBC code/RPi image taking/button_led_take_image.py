@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # Starter Kit PCB - image taking routine using a button with Red Amber and Green LED indicator
 #
-# command: python3 ./starter_maker_kit1/RPi_code/image_taking/button_led_take_image.py
+# command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_led_take_image.py
 #
 # this script introduces the use of pulse width modulation (PWM) a technique used to control a variety of 
 # devices (motors, servos as well as LEDs) esentially by switching them on and off very very fast
@@ -75,7 +75,7 @@ time_subfolder = " "
 print (" ")
 print (" ***************************************************************************")
 print (" All button triggered images will be stored under ")
-print (" ./starter_maker_kit1/RPi_code/image_taking/ ")
+print (" ./starter_maker_PCB1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name")
 print ("   ..... just hit RETURN for the default of 'single_image_led_folder'")
 while len(time_subfolder) <= 5 or " " in time_subfolder :
@@ -83,7 +83,7 @@ while len(time_subfolder) <= 5 or " " in time_subfolder :
 print (" ***************************************************************************")
 print (" ")
 
-imagefolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/" + time_subfolder + "/"
+imagefolder = "/home/" + user_name + "/starter_maker_PCB1/RPi_code/image_taking/" + time_subfolder + "/"
 
 # create the directory if it does not exist
 if not os.path.exists(imagefolder):

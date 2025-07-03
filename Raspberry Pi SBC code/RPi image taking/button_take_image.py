@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # Starter Kit PCB button_take_image.py - simple image taking routine using a button
 #
-# command: python3 ./starter_maker_kit1/RPi_code/image_taking/button_take_image.py
+# command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_take_image.py
 #
 
 import time                # this imports the module to allow various simple time functions to be used
@@ -35,7 +35,7 @@ image_subfolder = " "
 print (" ")
 print (" ***************************************************************************")
 print (" All button triggered images will be stored under ")
-print (" ./starter_maker_kit1/RPi_code/image_taking/ ")
+print (" ./starter_maker_PCB1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name")
 print ("   ..... just hit RETURN for the default of 'single_image_folder'")
 while len(image_subfolder) <= 5 or " " in image_subfolder :
@@ -43,7 +43,7 @@ while len(image_subfolder) <= 5 or " " in image_subfolder :
 print (" ***************************************************************************")
 print (" ")
 
-imagefolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/" + image_subfolder + "/"
+imagefolder = "/home/" + user_name + "/starter_maker_PCB1/RPi_code/image_taking/" + image_subfolder + "/"
 
 # create the directory if it does not exist
 if not os.path.exists(imagefolder):

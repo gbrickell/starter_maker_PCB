@@ -26,8 +26,8 @@ Two installation scripts are also provided that not only download all the code a
 Example code is provided for the Pi offline versions 1.4, 2 and 3 of Scratch so that any version of a Raspberry Pi SBC that can run Scratch in some form has an option.
 
 Python example code can usually be run using the Thonny IDE on a Raspberry Pi SBC but suggested CLI commands for the user are also provided in the code as a comment where the installed folders are assumed to be:
-/home/YOURUSERNAME/starter_maker_kit1/RPi_code/starter_ebasics/ for the electronic basics code, and
-/home/YOURUSERNAME/starter_maker_kit1/RPi_code/image_taking/ for the image taking code
+/home/YOURUSERNAME/starter_maker_PCB1/RPi_code/starter_ebasics/ for the electronic basics code, and
+/home/YOURUSERNAME/starter_maker_PCB1/RPi_code/image_taking/ for the image taking code
 
 The image taking code also assumes various folders for the storage of different types of 'taken' images and these folders are not always auto-created so the code should be checked so that the appropriate folders can be created before the code is run.
 

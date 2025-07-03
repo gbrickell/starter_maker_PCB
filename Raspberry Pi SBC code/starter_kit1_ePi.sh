@@ -23,20 +23,20 @@ then
 
 # create the main kit and code directories
 echo " Creating the main kit & code folders"
-mkdir /home/$uservarname/starter_maker_kit1
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code
+mkdir /home/$uservarname/starter_maker_PCB1
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code
 
 # download the documentation:
 echo " Downloading the documentation"
 
 # 1. download the readme01.txt file and store it in the designated folder on the Raspberry Pi
-wget -O /home/$uservarname/starter_maker_kit1/starter_maker_pcb_ePi_readme.txt https://onlinedevices.org.uk/dl1429
+wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_ePi_readme.txt https://onlinedevices.org.uk/dl1429
 
 # 2. download the "Getting Started" PDF and store it in the designated folder on the Raspberry Pi
-wget -O /home/$uservarname/starter_maker_kit1/starter_maker_pcb_getting_started.pdf https://onlinedevices.org.uk/dl1432
+wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_getting_started.pdf https://onlinedevices.org.uk/dl1432
 
 # 3. download the "Starter Maker Kit Usage Documentation" PDF and store it in the designated folder on the Raspberry Pi
-wget -O /home/$uservarname/starter_maker_kit1/starter_maker_pcb_usage_documentation.pdf https://onlinedevices.org.uk/dl1433
+wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_usage_documentation.pdf https://onlinedevices.org.uk/dl1433
 
 # install all the libraries needed
 
@@ -50,59 +50,59 @@ yes | pip3 install future
 
 # create the Electronics directories
 echo " Creating the Electronics folders"
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics
 # create the electronics Scratch code and web subfolders
 echo " Creating the Scratch and web subfolders"
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch1.4
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch2
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch3
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/static
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/static/css
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/static/images
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/templates
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch1.4
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch2
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch3
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/css
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/images
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/templates
 
 # download the Electronics software
 
 echo " Downloading the Electronics Flask web files"
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/static/css/normalize_advanced.css https://onlinedevices.org.uk/dl1447
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/static/css/skeleton_advanced.css https://onlinedevices.org.uk/dl1448
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/static/images/favicon.png https://onlinedevices.org.uk/dl1449
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/static/images/Starter_kit_PCB01_20210518_132528401_900w.jpg https://onlinedevices.org.uk/dl1450
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/static/images/Starter_kit_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/templates/electronics_header_insert.html https://onlinedevices.org.uk/dl1446
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/templates/electronics_layout.html https://onlinedevices.org.uk/dl1445
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/templates/electronics_select_mode1.html https://onlinedevices.org.uk/dl1444
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/templates/led1_setup_mode.html https://onlinedevices.org.uk/dl1443
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/templates/run_led1.html https://onlinedevices.org.uk/dl1442
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/css/normalize_advanced.css https://onlinedevices.org.uk/dl1447
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/css/skeleton_advanced.css https://onlinedevices.org.uk/dl1448
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/images/favicon.png https://onlinedevices.org.uk/dl1449
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/images/Starter_kit_PCB01_20210518_132528401_900w.jpg https://onlinedevices.org.uk/dl1450
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/images/Starter_kit_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/templates/electronics_header_insert.html https://onlinedevices.org.uk/dl1446
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/templates/electronics_layout.html https://onlinedevices.org.uk/dl1445
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/templates/electronics_select_mode1.html https://onlinedevices.org.uk/dl1444
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/templates/led1_setup_mode.html https://onlinedevices.org.uk/dl1443
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/templates/run_led1.html https://onlinedevices.org.uk/dl1442
 
 echo " Downloading the Electronics Python code"
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_user.py https://onlinedevices.org.uk/dl1440
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_root.py https://onlinedevices.org.uk/dl1441
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/buzzer_player.py https://onlinedevices.org.uk/dl1439
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/LED_button_buzzer.py https://onlinedevices.org.uk/dl1438
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/LED_button_flash.py https://onlinedevices.org.uk/dl1437
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/LED_flash.py https://onlinedevices.org.uk/dl1436
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/LED_red_amber_green_flash.py https://onlinedevices.org.uk/dl1435
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/LED_red_green_flash.py https://onlinedevices.org.uk/dl1434
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_user.py https://onlinedevices.org.uk/dl1440
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/LED1_flash_web_root.py https://onlinedevices.org.uk/dl1441
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/buzzer_player.py https://onlinedevices.org.uk/dl1439
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/LED_button_buzzer.py https://onlinedevices.org.uk/dl1438
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/LED_button_flash.py https://onlinedevices.org.uk/dl1437
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/LED_flash.py https://onlinedevices.org.uk/dl1436
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/LED_red_amber_green_flash.py https://onlinedevices.org.uk/dl1435
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/LED_red_green_flash.py https://onlinedevices.org.uk/dl1434
 
 echo " Downloading the Scratch 1.4 code"
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch1.4/LED_button_buzzer.sb https://onlinedevices.org.uk/dl1452
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch1.4/LED_button_flash.sb https://onlinedevices.org.uk/dl1453
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch1.4/LED_flash.sb https://onlinedevices.org.uk/dl1454
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch1.4/LED_red_green_flash.sb https://onlinedevices.org.uk/dl1455
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch1.4/LED_button_buzzer.sb https://onlinedevices.org.uk/dl1452
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch1.4/LED_button_flash.sb https://onlinedevices.org.uk/dl1453
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch1.4/LED_flash.sb https://onlinedevices.org.uk/dl1454
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch1.4/LED_red_green_flash.sb https://onlinedevices.org.uk/dl1455
 
 #echo " Downloading the Scratch 2 code"  # doesn't include button usage examples
-#wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch2/LED_button_buzzer.sb2 https://onlinedevices.org.uk/dl1456
-#wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch2/LED_button_flash.sb2 https://onlinedevices.org.uk/dl1457
-#wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch2/LED_flash.sb2 https://onlinedevices.org.uk/dl1462
-#wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch2/LED_red_green_flash.sb2 https://onlinedevices.org.uk/dl1459
+#wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch2/LED_button_buzzer.sb2 https://onlinedevices.org.uk/dl1456
+#wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch2/LED_button_flash.sb2 https://onlinedevices.org.uk/dl1457
+#wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch2/LED_flash.sb2 https://onlinedevices.org.uk/dl1462
+#wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch2/LED_red_green_flash.sb2 https://onlinedevices.org.uk/dl1459
 
 echo " Downloading the Scratch 3 code"
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch3/LED_button_buzzer.sb3 https://onlinedevices.org.uk/dl1460
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch3/LED_button_flash.sb3 https://onlinedevices.org.uk/dl1461
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch3/LED_flash.sb3 https://onlinedevices.org.uk/dl1458
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/starter_ebasics/scratch3/LED_red_green_flash.sb3 https://onlinedevices.org.uk/dl1463
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch3/LED_button_buzzer.sb3 https://onlinedevices.org.uk/dl1460
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch3/LED_button_flash.sb3 https://onlinedevices.org.uk/dl1461
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch3/LED_flash.sb3 https://onlinedevices.org.uk/dl1458
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch3/LED_red_green_flash.sb3 https://onlinedevices.org.uk/dl1463
 
 echo " All downloads are now complete."
 echo " "

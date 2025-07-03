@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # timelapse_cron_take_annotated_image.py - simple annotated image taking routine to be run as a cron job for time lapse image capture
 #
-# command: python3 ./starter_maker_kit1/RPi_code/image_taking/timelapse_cron_take_annotated_image.py
+# command: python3 ./starter_maker_PCB1/RPi_code/image_taking/timelapse_cron_take_annotated_image.py
 #
 
 import time                # this imports the module to allow various simple time functions to be used
@@ -28,7 +28,7 @@ user_name = os.getlogin()
 annotation_text = "Time-lapse image"
 
 # define the folder where images will be stored
-imagefolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/timelapse_image_folder/"   # hard coded but can be changed to anything
+imagefolder = "/home/" + user_name + "/starter_maker_PCB1/RPi_code/image_taking/timelapse_image_folder/"   # hard coded but can be changed to anything
 # in some circumstances new file/directory ownership may become an issue
 # so the lines below create a command string to make sure the new directory and its files are 'owned' by 'user_name'
 os_chown_command = "chown -R " + user_name +":" + user_name + " " + imagefolder

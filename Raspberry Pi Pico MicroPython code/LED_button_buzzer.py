@@ -1,6 +1,6 @@
 # Starter Maker Kit version of LED_button_flash.py that that lights a LED and buzzes when the button is pressed
-# Run from Thonny using the file that may be stored at /home/pi/starter_maker_kit1/Pico_MPcode/LED_button_buzzer.py
-# the file path /home/pi/starter_maker_kit1/Pico_MPcode will need to be changed if you have stored your code elsewhere
+# Run from Thonny using the file that may be stored at /home/pi/starter_maker_PCB1/Pico_MPcode/LED_button_buzzer.py
+# the file path /home/pi/starter_maker_PCB1/Pico_MPcode will need to be changed if you have stored your code elsewhere
 
 import machine   # this imports the main Pico library that allows the GPIO pins and many other things to be easily utilised
 from machine import Pin

@@ -1,6 +1,6 @@
 # Starter Maker Kit version of LED_flash.py that flashes a the red & green LEDs on/off sequentially
-# Run from Thonny using the file that may be stored at /home/pi/starter_maker_kit1/Pico_MPcode/LED_red_green_flash.py
-# the file path /home/pi/starter_maker_kit1/Pico_MPcode/ will need to be changed if you have stored your code elsewhere
+# Run from Thonny using the file that may be stored at /home/pi/starter_maker_PCB1/Pico_MPcode/LED_red_green_flash.py
+# the file path /home/pi/starter_maker_PCB1/Pico_MPcode/ will need to be changed if you have stored your code elsewhere
 
 import machine   # this imports the main Pico library that allows the GPIO pins and many other things to be easily utilised
 from machine import Pin

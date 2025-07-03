@@ -3,7 +3,7 @@
 # sort_number_symlink_files.py - routine to create sorted symbolic link files to the time lapse or stop motion files with a
 #   simplified sequential number instead of the time & date info so that ffmpeg can be used to create the video
 #
-# command: python3 ./starter_maker_kit1/RPi_code/image_taking/sort_number_symlink_files.py
+# command: python3 ./starter_maker_PCB1/RPi_code/image_taking/sort_number_symlink_files.py
 #
 
 # import required libraries
@@ -18,7 +18,7 @@ user_name = os.getlogin()
 symlink_subfolder = " "   # give the variable an initial null value
 print (" ")
 print (" **************************************************************************************************************")
-print (" All symlinks to the images will be stored under /home/"+user_name+"/starter_maker_kit1/RPi_code/image_taking/ ")
+print (" All symlinks to the images will be stored under /home/"+user_name+"/starter_maker_PCB1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name for the ** SYMLINKS **")
 print ("   ..... just hit RETURN for the default of 'symlink_default_folder'")
 while len(symlink_subfolder) <= 5 or " " in symlink_subfolder :
@@ -27,7 +27,7 @@ print (" ***********************************************************************
 print (" ")
 
 # build the full path as a text string
-symlink_directory = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/" + symlink_subfolder + "/"
+symlink_directory = "/home/" + user_name + "/starter_maker_PCB1/RPi_code/image_taking/" + symlink_subfolder + "/"
 
 # create the symlink directory if it does not exist yet
 # this creates the folder on the default SD card
@@ -46,16 +46,16 @@ image_subfolder =  " "   # give the variable an null initial value
 # set the target directory where the individual timestamped time lapsed images files have been stored
 print (" ")
 print (" ----------------------------------------------------------------------------------------------------------------------------")
-print (" All the captured individual images will have been stored under /home/"+user_name+"/starter_maker_kit1/RPi_code/image_taking/")
+print (" All the captured individual images will have been stored under /home/"+user_name+"/starter_maker_PCB1/RPi_code/image_taking/")
 print ("   ..... but you must now enter the subfolder name that has been used for the ** STORED IMAGES **")
 print ("   ..... just hit RETURN for the default of 'timelapse_image_folder'")
-while not os.path.exists("./starter_maker_kit1/RPi_code/image_taking/" + image_subfolder):
+while not os.path.exists("./starter_maker_PCB1/RPi_code/image_taking/" + image_subfolder):
     image_subfolder = input(" Enter sub-folder name - which must exist (CTRL C to stop? )") or "timelapse_image_folder"
 print (" ----------------------------------------------------------------------------------------------------------------------------")
 print (" ")
 
 # build the full path as a text string
-target_directory = "/home/"+user_name+"/starter_maker_kit1/RPi_code/image_taking/" + image_subfolder + "/"
+target_directory = "/home/"+user_name+"/starter_maker_PCB1/RPi_code/image_taking/" + image_subfolder + "/"
 
 # set the system to be in the target directory
 #os.chdir(target_directory)

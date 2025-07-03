@@ -7,7 +7,7 @@
 # 
 #  - this version uses the USB camera class that annotates the image
 
-# command to run: sudo python3 ./starter_maker_kit1/RPi_code/image_taking/image_taking_controller/image_streaming_app_root_annotate.py
+# command to run: sudo python3 ./starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/image_streaming_app_root_annotate.py
 # N.B.  browser URL can use port 80 so no special port referencing is needed
 #
 

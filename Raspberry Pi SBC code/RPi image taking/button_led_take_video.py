@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # Starter Kit PCB - button_led_take_video.py - video taking routine using a button with Red, Amber & Green LED indicators
 #
-# command: python3 ./starter_maker_kit1/RPi_code/image_taking/button_led_take_video.py
+# command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_led_take_video.py
 #
 # this script introduces the use of pulse width modulation (PWM) a technique used to control a variety of 
 # devices (motors, servos as well as LEDs) esentially by switching them on and off very very fast
@@ -75,7 +75,7 @@ video_subfolder = " "
 print (" ")
 print (" ***************************************************************************")
 print (" All button triggered videos will be stored under ")
-print (" ./starter_maker_kit1/RPi_code/image_taking/ ")
+print (" ./starter_maker_PCB1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name")
 print ("   ..... just hit RETURN for the default of 'button_video_led_folder'")
 while len(video_subfolder) <= 5 or " " in video_subfolder :
@@ -83,7 +83,7 @@ while len(video_subfolder) <= 5 or " " in video_subfolder :
 print (" ***************************************************************************")
 print (" ")
 
-videofolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/" + video_subfolder + "/"
+videofolder = "/home/" + user_name + "/starter_maker_PCB1/RPi_code/image_taking/" + video_subfolder + "/"
 
 # create the directory if it does not exist
 if not os.path.exists(videofolder):

@@ -23,20 +23,20 @@ then
 
 # create the main kit and code directories
 echo " Creating the main kit & code folders"
-mkdir /home/$uservarname/starter_maker_kit1
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code
+mkdir /home/$uservarname/starter_maker_PCB1
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code
 
 # download the documentation:
 echo " Downloading the documentation"
 
 # 1. download the readme01.txt file and store it in the designated folder on the Raspberry Pi
-wget -O /home/$uservarname/starter_maker_kit1/starter_maker_pcb_imgPi_readme.txt https://onlinedevices.org.uk/dl1431
+wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_imgPi_readme.txt https://onlinedevices.org.uk/dl1431
 
 # 2. download the "Getting Started" PDF and store it in the designated folder on the Raspberry Pi
-wget -O /home/$uservarname/starter_maker_kit1/starter_maker_pcb_getting_started.pdf https://onlinedevices.org.uk/dl1432
+wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_getting_started.pdf https://onlinedevices.org.uk/dl1432
 
 # 3. download the "Starter Maker Kit Usage Documentation" PDF and store it in the designated folder on the Raspberry Pi
-wget -O /home/$uservarname/starter_maker_kit1/starter_maker_pcb_usage_documentation.pdf https://onlinedevices.org.uk/dl1433
+wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_usage_documentation.pdf https://onlinedevices.org.uk/dl1433
 
 # install all the libraries needed
 
@@ -57,55 +57,55 @@ yes | pip3 install pyautogui
 
 # create the Image Taking directories
 echo " Creating the Image Taking folders"
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking
 
 # create the Image Taking web subfolders
 echo " Creating the Image Taking web subfolders"
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/static
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/static/css
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/static/images
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/templates
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/button_video_folder
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/button_video_led_folder
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/button_video_timer_folder
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/single_image_folder
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/single_image_led_folder
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/single_image_timer_folder
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/stop_motion_test01
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/stopmotion_video_folder
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/timelapse_image_folder
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_timelapse_video_folder
-mkdir /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_video_clip_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/css
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/button_video_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/button_video_led_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/button_video_timer_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/single_image_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/single_image_led_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/single_image_timer_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/stop_motion_test01
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/stopmotion_video_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/timelapse_image_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_timelapse_video_folder
+mkdir /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_video_clip_folder
 
 # download the Image Taking software
 
 echo " Downloading the Image Taking Flask web files"
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/static/css/normalize_advanced.css https://onlinedevices.org.uk/dl1447
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/static/css/skeleton_advanced.css https://onlinedevices.org.uk/dl1448
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/static/images/favicon.png https://onlinedevices.org.uk/dl1449
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/static/images/Starter_kit_PCB01_20210518_132528401_900w.jpg https://onlinedevices.org.uk/dl1450
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/static/images/Starter_kit_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/templates/cam_options_setup.html https://onlinedevices.org.uk/dl1473
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/templates/cam_setup_mode.html https://onlinedevices.org.uk/dl1474
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/templates/header_insert.html https://onlinedevices.org.uk/dl1475
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/templates/layout.html https://onlinedevices.org.uk/dl1476
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/templates/select_mode.html https://onlinedevices.org.uk/dl1477
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/templates/stream_video_mode.html https://onlinedevices.org.uk/dl1478
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/css/normalize_advanced.css https://onlinedevices.org.uk/dl1447
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/css/skeleton_advanced.css https://onlinedevices.org.uk/dl1448
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/favicon.png https://onlinedevices.org.uk/dl1449
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/Starter_kit_PCB01_20210518_132528401_900w.jpg https://onlinedevices.org.uk/dl1450
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/Starter_kit_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/cam_options_setup.html https://onlinedevices.org.uk/dl1473
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/cam_setup_mode.html https://onlinedevices.org.uk/dl1474
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/header_insert.html https://onlinedevices.org.uk/dl1475
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/layout.html https://onlinedevices.org.uk/dl1476
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/select_mode.html https://onlinedevices.org.uk/dl1477
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/stream_video_mode.html https://onlinedevices.org.uk/dl1478
 
 echo " Downloading the Image Taking Python files"
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/image_camera_usb_opencv_annotate.py https://onlinedevices.org.uk/dl1470
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/image_streaming_app_root_annotate.py https://onlinedevices.org.uk/dl1471
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/image_taking_controller/image_streaming_app_user_annotate.py https://onlinedevices.org.uk/dl1472
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/button_led_take_image.py https://onlinedevices.org.uk/dl1479
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/button_led_take_video.py https://onlinedevices.org.uk/dl1480
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/button_take_image.py https://onlinedevices.org.uk/dl1481
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/button_take_video.py https://onlinedevices.org.uk/dl1482
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/button_timer_take_image.py https://onlinedevices.org.uk/dl1483
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/button_timer_take_video.py https://onlinedevices.org.uk/dl1484
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/sort_number_symlink_files.py https://onlinedevices.org.uk/dl1485
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/timelapse_cron_take_annotated_image.py https://onlinedevices.org.uk/dl1486
-wget -O /home/$uservarname/starter_maker_kit1/RPi_code/image_taking/timelapse_cron_take_image.py https://onlinedevices.org.uk/dl1487
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/image_camera_usb_opencv_annotate.py https://onlinedevices.org.uk/dl1470
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/image_streaming_app_root_annotate.py https://onlinedevices.org.uk/dl1471
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/image_streaming_app_user_annotate.py https://onlinedevices.org.uk/dl1472
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/button_led_take_image.py https://onlinedevices.org.uk/dl1479
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/button_led_take_video.py https://onlinedevices.org.uk/dl1480
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/button_take_image.py https://onlinedevices.org.uk/dl1481
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/button_take_video.py https://onlinedevices.org.uk/dl1482
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/button_timer_take_image.py https://onlinedevices.org.uk/dl1483
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/button_timer_take_video.py https://onlinedevices.org.uk/dl1484
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/sort_number_symlink_files.py https://onlinedevices.org.uk/dl1485
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/timelapse_cron_take_annotated_image.py https://onlinedevices.org.uk/dl1486
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/timelapse_cron_take_image.py https://onlinedevices.org.uk/dl1487
 
 
 echo " All downloads are now complete."

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # Starter Kit PCB button_take_video.py - simple video taking routine using a button
 #
-# command: python3 ./starter_maker_kit1/RPi_code/image_taking/button_take_video.py
+# command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_take_video.py
 #
 
 import time                # this imports the module to allow various simple time functions to be used
@@ -35,7 +35,7 @@ video_subfolder = " "
 print (" ")
 print (" ***************************************************************************")
 print (" All button triggered videos will be stored under ")
-print (" ./starter_maker_kit1/RPi_code/image_taking/ ")
+print (" ./starter_maker_PCB1/RPi_code/image_taking/ ")
 print ("   ..... but you must now enter a subfolder name for your VIDEOs")
 print ("   ..... just hit RETURN for the default of 'button_video_folder'")
 while len(video_subfolder) <= 5 or " " in video_subfolder :
@@ -43,7 +43,7 @@ while len(video_subfolder) <= 5 or " " in video_subfolder :
 print (" ***************************************************************************")
 print (" ")
 
-videofolder = "/home/" + user_name + "/starter_maker_kit1/RPi_code/image_taking/" + video_subfolder + "/"
+videofolder = "/home/" + user_name + "/starter_maker_PCB1/RPi_code/image_taking/" + video_subfolder + "/"
 
 # create the directory if it does not exist
 if not os.path.exists(videofolder):
