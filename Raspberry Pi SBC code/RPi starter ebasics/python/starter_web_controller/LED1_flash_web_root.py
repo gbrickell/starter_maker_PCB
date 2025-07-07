@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Starter kit PCB version 1.0
+# Starter PCB PCB version 1.0
 # file name: LED1_flash_web_root.py
 # Electronics testing Flask controller: python code as part of a Flask based web server system
 #  which controls the flashing of a single LED on/off from a web interface

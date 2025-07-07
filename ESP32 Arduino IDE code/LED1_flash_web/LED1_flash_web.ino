@@ -1,5 +1,5 @@
 /*
-  starter maker kit Arduino IDE/ESP32 web interface to various electronic 'basics'
+  starter maker PCB Arduino IDE/ESP32 web interface to various electronic 'basics'
 
 */
 

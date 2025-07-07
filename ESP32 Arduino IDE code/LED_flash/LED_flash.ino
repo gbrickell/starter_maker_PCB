@@ -1,5 +1,5 @@
 /*
-  starter maker kit Arduino IDE/ESP32 version of LED_flash.py that flashes a single LED on/off
+  starter maker PCB Arduino IDE/ESP32 version of LED_flash.py that flashes a single LED on/off
 */
 
 //  code developed and compiled using the Arduino IDE v1.8.13 on a Windows 10 PC
@@ -21,7 +21,7 @@ void setup() {
   Serial.println("");
   Serial.println("program running - Red LED should be flashing");
   Serial.println("");
-  // initialize digital pin positive_pin (the LED on the Starter Maker Kit) as an output.
+  // initialize digital pin positive_pin (the LED on the Starter Maker PCB) as an output.
   pinMode(positive_pin, OUTPUT);
 }
 

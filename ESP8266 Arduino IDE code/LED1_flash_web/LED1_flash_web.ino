@@ -1,5 +1,5 @@
 /*
-  starter maker kit Arduino IDE/ESP8266 web interface to various electronic 'basics'
+  starter maker PCB Arduino IDE/ESP8266 web interface to various electronic 'basics'
       that alternates on/off for two LEDs (red & green)
 */
 

@@ -1,4 +1,4 @@
-# Starter Maker Kit version of LED_flash.py that flashes a the red & green LEDs on/off sequentially
+# Starter Maker PCB version of LED_flash.py that flashes a the red & green LEDs on/off sequentially
 # Run from Thonny using the file that may be stored at /home/pi/starter_maker_PCB1/Pico_MPcode/LED_red_green_flash.py
 # the file path /home/pi/starter_maker_PCB1/Pico_MPcode/ will need to be changed if you have stored your code elsewhere
 

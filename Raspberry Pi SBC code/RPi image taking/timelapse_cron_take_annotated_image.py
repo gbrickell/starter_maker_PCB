@@ -16,11 +16,11 @@ user_name = os.getlogin()
 
 # This basic routine does not use any GPIO functions - it just needs the USB camera connected to the Pi
 # it should be run with a cron job e.g. as root under the sudo crontab ie create the following entry using "sudo crontab -e"
-# script to run every 5 minutes to take an image with the Image Taking Kit's USB camera (adjust time as necessary)
-#*/5 * * * * python3 ./RPi_maker_kit5/image_taking/timelapse_cron_take_annotated_image.py >> /dev/null 2>> /dev/null
+# script to run every 5 minutes to take an image with the Image Taking PCB's USB camera (adjust time as necessary)
+#*/5 * * * * python3 ./RPi_maker_PCB5/image_taking/timelapse_cron_take_annotated_image.py >> /dev/null 2>> /dev/null
 # or
 # script to run every 5 minutes from 6am through to 9:55pm (adjust time as necessary)
-#*/5 6-21 * * * python3 ./RPi_maker_kit5/image_taking/timelapse_cron_take_annotated_image.py >> /dev/null 2>> /dev/null
+#*/5 6-21 * * * python3 ./RPi_maker_PCB5/image_taking/timelapse_cron_take_annotated_image.py >> /dev/null 2>> /dev/null
 
 # define the text part of what is added to each captured image: the default is "Time-lapse image" but
 # you can change this to whatever you like and it appears before the timestamp info that is also added

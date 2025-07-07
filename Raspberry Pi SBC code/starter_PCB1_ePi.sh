@@ -35,7 +35,7 @@ wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_ePi_readme.txt h
 # 2. download the "Getting Started" PDF and store it in the designated folder on the Raspberry Pi
 wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_getting_started.pdf https://onlinedevices.org.uk/dl1432
 
-# 3. download the "Starter Maker Kit Usage Documentation" PDF and store it in the designated folder on the Raspberry Pi
+# 3. download the "Starter Maker PCB Usage Documentation" PDF and store it in the designated folder on the Raspberry Pi
 wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_usage_documentation.pdf https://onlinedevices.org.uk/dl1433
 
 # install all the libraries needed
@@ -68,8 +68,8 @@ echo " Downloading the Electronics Flask web files"
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/css/normalize_advanced.css https://onlinedevices.org.uk/dl1447
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/css/skeleton_advanced.css https://onlinedevices.org.uk/dl1448
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/images/favicon.png https://onlinedevices.org.uk/dl1449
-wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/images/Starter_kit_PCB01_20210518_132528401_900w.jpg https://onlinedevices.org.uk/dl1450
-wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/images/Starter_kit_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/images/Starter_PCB01_20210518_132528401_900w.jpg https://onlinedevices.org.uk/dl1450
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/static/images/Starter_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/templates/electronics_header_insert.html https://onlinedevices.org.uk/dl1446
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/templates/electronics_layout.html https://onlinedevices.org.uk/dl1445
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/starter_web_controller/templates/electronics_select_mode1.html https://onlinedevices.org.uk/dl1444

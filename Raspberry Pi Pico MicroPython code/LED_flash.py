@@ -1,4 +1,4 @@
-# Starter Maker Kit version of LED_flash.py that flashes a single LED on/off
+# Starter Maker PCB version of LED_flash.py that flashes a single LED on/off
 # Run from Thonny using the file that may be stored at /home/pi/starter_maker_PCB1/Pico_MPcode/LED_flash.py
 # the file path /home/pi/starter_maker_PCB1/Pico_MPcode/ will need to be changed if you have stored your code elsewhere
 

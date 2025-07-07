@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Starter Kit PCB button_take_video.py - simple video taking routine using a button
+# Starter PCB PCB button_take_video.py - simple video taking routine using a button
 #
 # command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_take_video.py
 #

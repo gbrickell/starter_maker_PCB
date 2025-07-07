@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Starter Kit PCB version of button_timer_take_image.py - timer initiated image taking routine 
+# Starter PCB PCB version of button_timer_take_image.py - timer initiated image taking routine 
 #    using a button with Red Amber & Green LEDs + buzzer indicators
 #
 # command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_timer_take_image.py

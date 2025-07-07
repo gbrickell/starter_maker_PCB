@@ -1,5 +1,5 @@
 /*
-  starter maker kit Arduino IDE/ESP8266 version of buzzer_player.py that plays tunes
+  starter maker PCB Arduino IDE/ESP8266 version of buzzer_player.py that plays tunes
    the tune data is loaded into SPIFFS and then read by the program
 */
 

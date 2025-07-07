@@ -1,4 +1,4 @@
-# starter maker kit PCB version of LED_button_flash.py that lights a single LED 'on' for 3 secs and then 'off' when a button is pressed
+# starter maker PCB PCB version of LED_button_flash.py that lights a single LED 'on' for 3 secs and then 'off' when a button is pressed
 
 # command to run this script:  python3 ./starter_maker_PCB1/RPi_code/starter_ebasics/LED_button_flash.py
 

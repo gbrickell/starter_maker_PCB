@@ -2,7 +2,7 @@
 #---------------------------------------------------
 # This is free and unencumbered software released into the public domain.
 
-# updated for use with starter maker kit 1 May'21
+# updated for use with starter maker PCB 1 May'21
 # command: python3 ./starter_maker_PCB1/RPi_code/starter_ebasics/buzzer_player.py
 #
 # Anyone is free to copy, modify, publish, use, compile, sell, or

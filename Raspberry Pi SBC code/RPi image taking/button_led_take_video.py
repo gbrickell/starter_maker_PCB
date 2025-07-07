@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Starter Kit PCB - button_led_take_video.py - video taking routine using a button with Red, Amber & Green LED indicators
+# Starter PCB PCB - button_led_take_video.py - video taking routine using a button with Red, Amber & Green LED indicators
 #
 # command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_led_take_video.py
 #

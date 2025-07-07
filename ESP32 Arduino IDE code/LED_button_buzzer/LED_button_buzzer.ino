@@ -1,5 +1,5 @@
 /*
-  starter maker kit Arduino IDE/ESP32 version of LED_button_buzzer.py that lights 
+  starter maker PCB Arduino IDE/ESP32 version of LED_button_buzzer.py that lights 
     a single LED on/off and buzzs for 3 secs  wh en a button is pressed
 */
 

@@ -1,5 +1,5 @@
 /*
-  starter maker kit Arduino IDE/Pico version of LED_button_flash.py that lights 
+  starter maker PCB Arduino IDE/Pico version of LED_button_flash.py that lights 
     a single LED 'on' for 3 secs and then 'off' when a button is pressed
 */
 

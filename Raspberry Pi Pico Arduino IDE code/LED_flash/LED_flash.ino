@@ -1,5 +1,5 @@
 /*
-  starter maker kit Arduino IDE/Pico version of LED_flash.py that flashes a single LED on/off
+  starter maker PCB Arduino IDE/Pico version of LED_flash.py that flashes a single LED on/off
 */
 
 // this is the GPIO pin that the RED LED positive leg (via the resistor) is connected to
@@ -13,7 +13,7 @@ void setup() {
   Serial.println("");
   Serial.println("program running - Red LED should be flashing");
   Serial.println("");
-  // initialize digital pin positive_pin (the LED on the Starter Maker Kit) as an output.
+  // initialize digital pin positive_pin (the LED on the Starter Maker PCB) as an output.
   pinMode(positive_pin, OUTPUT);
 }
 

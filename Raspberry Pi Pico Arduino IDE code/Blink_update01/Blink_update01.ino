@@ -13,7 +13,7 @@ void setup() {
   Serial.println("");
   Serial.println("Pico blink test code");
   Serial.println("");
-  // initialize digital pin LEDpin (the LED on the Starter Maker Kit) as an output.
+  // initialize digital pin LEDpin (the LED on the Starter Maker PCB) as an output.
   pinMode(LEDpin, OUTPUT);
 }
 

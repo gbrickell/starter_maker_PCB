@@ -1,5 +1,5 @@
 /*
-  starter maker kit Arduino IDE/ESP8266 version of LED_red_green_flash.py 
+  starter maker PCB Arduino IDE/ESP8266 version of LED_red_green_flash.py 
       that alternates on/off for two LEDs (red & green)
 */
 
@@ -22,7 +22,7 @@ void setup() {
   Serial.println("");
   Serial.println("program running - Red and Green LEDs should be flashing");
   Serial.println("");
-  // initialize digital pins (the Red & Green LEDs on the Starter Maker Kit) as outputs.
+  // initialize digital pins (the Red & Green LEDs on the Starter Maker PCB) as outputs.
   pinMode(red_positive_pin, OUTPUT);
   pinMode(green_positive_pin, OUTPUT);
 }

@@ -1,4 +1,4 @@
-# Starter Maker Kit version of LED_button_flash.py that lights a LED when the button is pressed
+# Starter Maker PCB version of LED_button_flash.py that lights a LED when the button is pressed
 # Run from Thonny using the file that may be stored at /home/pi/starter_maker_PCB1/Pico_MPcode/LED_button_flash.py
 # the file path /home/pi/starter_maker_PCB1/Pico_MPcode/ will need to be changed if you have stored your code elsewhere
 

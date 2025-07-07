@@ -291,7 +291,7 @@ textarea,
 select {
   height: 38px;
   text-align: center;
-  padding: 6px 5px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  padding: 6px 5px; /* The 6px vertically centers text on FF, ignored by WebPCB */
   background-color: #fff;
   border: 1px solid #D1D1D1;
   border-radius: 4px;
@@ -306,7 +306,7 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
-  -webkit-appearance: none;
+  -webPCB-appearance: none;
      -moz-appearance: none;
           appearance: none; }
 textarea {

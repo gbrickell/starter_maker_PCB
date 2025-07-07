@@ -1,5 +1,5 @@
 /*
-  starter maker kit Arduino IDE/ESP8266 version of LED_flash.py that flashs a LED on/off
+  starter maker PCB Arduino IDE/ESP8266 version of LED_flash.py that flashs a LED on/off
    
 */
 
@@ -27,7 +27,7 @@ void setup() {
   Serial.println("");
   Serial.println("program running - Red LED should be flashing");
   Serial.println("");
-  // initialize digital pin positive_pin (the LED on the Starter Maker Kit) as an output.
+  // initialize digital pin positive_pin (the LED on the Starter Maker PCB) as an output.
   pinMode(positive_pin, OUTPUT);
 }
 

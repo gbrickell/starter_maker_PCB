@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Starter Kit PCB - image taking routine using a button with Red Amber and Green LED indicator
+# Starter PCB PCB - image taking routine using a button with Red Amber and Green LED indicator
 #
 # command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_led_take_image.py
 #

@@ -1,7 +1,7 @@
 # Starter Maker PCB
  Documentation plus Raspberry Pi and microcontroller code for a starter level digital maker PCB.
 
- &nbsp; &nbsp; <img src="images\annotated_assembled_starter_kit01_500w.jpg">
+ &nbsp; &nbsp; <img src="images\annotated_assembled_starter_PCB01_500w.jpg">
 
 A 'starter' maker PCB that uses just a few basic electronic components, as shown above, and can be connected to any of the main single board computer (SBC) Raspberry Pi's or a number of different microcontrollers - [more detailed project information here](https://onlinedevices.org.uk/Starter+Maker+PCB) and the designs for an associated custom 3D printed component can be downloaded from [here](https://www.prusaprinters.org/prints/67963-pcb-support-foot)
 
@@ -14,7 +14,7 @@ The code allows a number of different projects to be explored by a 'starter' dig
 
 The custom PCB (v1.0) was designed using KiCAD and the layout has been defined to allow a connector to attach to any Raspberry Pi and a range of microcontrollers, and a set of components that are needed to build a fully populated module.
 
-<img src="images/Starter_kit_PCB01_front_900w.jpg" width="139" height="180"> &nbsp; &nbsp; <img src="images/Starter_kit_PCB01_20210518_133032651.NIGHT_900w.jpg" width="174" height="180"> &nbsp; &nbsp; <img src="images/Starter_kit_PCB01_20210518_132216142_900w.jpg" width="193" height="180">  
+<img src="images/Starter_PCB01_front_900w.jpg" width="139" height="180"> &nbsp; &nbsp; <img src="images/Starter_PCB01_20210518_133032651.NIGHT_900w.jpg" width="174" height="180"> &nbsp; &nbsp; <img src="images/Starter_PCB01_20210518_132216142_900w.jpg" width="193" height="180">  
 
 Gerber files for the PCB design can be downloaded from the PCB_design_files folder.
 

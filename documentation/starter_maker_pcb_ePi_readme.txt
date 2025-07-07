@@ -58,8 +58,8 @@ software & documentation version 2.0  September 2024
   web css       - normalize_advanced.css	
                 - skeleton_advanced.css
   web images    - favicon.png
-                - Starter_kit_PCB01_20210518_132528401_900w.jpg
-			    - Starter_kit_PCB01_front_image.png
+                - Starter_PCB01_20210518_132528401_900w.jpg
+			    - Starter_PCB01_front_image.png
   web templates - electronics_header_insert.html
                 - electronics_layout.html
 				- electronics_select_mode1.html

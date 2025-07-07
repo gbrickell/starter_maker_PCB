@@ -1,4 +1,4 @@
-# Starter Maker Kit version of buzzer_player.py that that plays various tunes
+# Starter Maker PCB version of buzzer_player.py that that plays various tunes
 # Run from Thonny using the file that may be stored at /home/pi/starter_maker_PCB1/Pico_MPcode/buzzer_player.py
 # the file path /home/pi/starter_maker_PCB1/Pico_MPcode will need to be changed if you have stored your code elsewhere
 
