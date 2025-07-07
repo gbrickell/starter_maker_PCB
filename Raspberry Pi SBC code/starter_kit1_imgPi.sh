@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# this control script supports the image taking projects with Starter Maker Kit1 and any Raspberry Pi SBC
-# - when run as shown in the kit's documentation it will download various PDFs, Scratch & Python programs plus other material
+# this control script supports the image taking projects with Starter Maker PCB1 and any Raspberry Pi SBC
+# - when run as shown in the PCB's documentation it will download various PDFs, Scratch & Python programs plus other material
 # output a message about 'activating' a virtual environment for using Python
 echo "**********************************************"
 echo " please note that you should have activated"
@@ -21,8 +21,8 @@ then
 
   echo " script size looks OK - executing all the commands"
 
-# create the main kit and code directories
-echo " Creating the main kit & code folders"
+# create the main PCB and code directories
+echo " Creating the main PCB & code folders"
 mkdir /home/$uservarname/starter_maker_PCB1
 mkdir /home/$uservarname/starter_maker_PCB1/RPi_code
 
@@ -35,7 +35,7 @@ wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_imgPi_readme.txt
 # 2. download the "Getting Started" PDF and store it in the designated folder on the Raspberry Pi
 wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_getting_started.pdf https://onlinedevices.org.uk/dl1432
 
-# 3. download the "Starter Maker Kit Usage Documentation" PDF and store it in the designated folder on the Raspberry Pi
+# 3. download the "Starter Maker PCB Usage Documentation" PDF and store it in the designated folder on the Raspberry Pi
 wget -O /home/$uservarname/starter_maker_PCB1/starter_maker_pcb_usage_documentation.pdf https://onlinedevices.org.uk/dl1433
 
 # install all the libraries needed
@@ -84,8 +84,8 @@ echo " Downloading the Image Taking Flask web files"
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/css/normalize_advanced.css https://onlinedevices.org.uk/dl1447
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/css/skeleton_advanced.css https://onlinedevices.org.uk/dl1448
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/favicon.png https://onlinedevices.org.uk/dl1449
-wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/Starter_kit_PCB01_20210518_132528401_900w.jpg https://onlinedevices.org.uk/dl1450
-wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/Starter_kit_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/Starter_PCB01_20210518_132528401_900w.jpg https://onlinedevices.org.uk/dl1450
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/StarterPCB_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/cam_options_setup.html https://onlinedevices.org.uk/dl1473
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/cam_setup_mode.html https://onlinedevices.org.uk/dl1474
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/header_insert.html https://onlinedevices.org.uk/dl1475
@@ -110,8 +110,8 @@ wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/timelapse_cr
 
 echo " All downloads are now complete."
 echo " "
-echo " Please read the downloaded maker_kit3_readme01.txt file to see the latest information regarding "
-echo " this kit and advice on how you can dispose of it, if or when you are finished with it."
+echo " Please read the downloaded maker_PCB_readme01.txt file to see the latest information regarding "
+echo " this PCB plus its components and advice on how you can dispose of it, if or when you are finished with it."
 echo " "
 echo " "
 

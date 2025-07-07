@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# this control script supports the electronic basics projects with Starter Maker Kit1 and any Raspberry Pi SBC
-# - when run as shown in the kit's documentation it will download various PDFs, Scratch & Python programs plus other material
+# this control script supports the electronic basics projects with Starter Maker PCB1 and any Raspberry Pi SBC
+# - when run as shown in the PCB's documentation it will download various PDFs, Scratch & Python programs plus other material
 # output a message about 'activating' a virtual environment for using Python
 echo "**********************************************"
 echo " please note that you should have activated"
@@ -21,8 +21,8 @@ then
 
   echo " script size looks OK - executing all the commands"
 
-# create the main kit and code directories
-echo " Creating the main kit & code folders"
+# create the main PCB and code directories
+echo " Creating the main PCB & code folders"
 mkdir /home/$uservarname/starter_maker_PCB1
 mkdir /home/$uservarname/starter_maker_PCB1/RPi_code
 
@@ -107,7 +107,7 @@ wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/starter_ebasics/scratch3/
 echo " All downloads are now complete."
 echo " "
 echo " Please read the downloaded starter_PCB1_ePi_readme.txt file to see the latest information regarding "
-echo " this kit and advice on how you can dispose of it, if or when you are finished with it."
+echo " this PCB plus its components and advice on how you can dispose of it, if or when you are finished with it."
 echo " "
 echo " "
 
