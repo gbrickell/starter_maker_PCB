@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Starter PCB PCB version of button_timer_take_video.py - timer initiated video clip taking routine 
+# Starter PCB version of button_timer_take_video.py - timer initiated video clip taking routine 
 #    using a button with Red Amber & Green LEDs + buzzer indicators
 #
 # command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_timer_take_video.py

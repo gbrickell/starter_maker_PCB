@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Starter PCB PCB button_take_image.py - simple image taking routine using a button
+# Starter PCB button_take_image.py - simple image taking routine using a button
 #
 # command: python3 ./starter_maker_PCB1/RPi_code/image_taking/button_take_image.py
 #
