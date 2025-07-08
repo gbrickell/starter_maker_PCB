@@ -85,7 +85,7 @@ wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/css/skeleton_advanced.css https://onlinedevices.org.uk/dl1448
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/favicon.png https://onlinedevices.org.uk/dl1449
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/Starter_PCB01_20210518_132528401_900w.jpg https://onlinedevices.org.uk/dl1450
-wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/StarterPCB_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
+wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/static/images/Starter_PCB01_front_image.png https://onlinedevices.org.uk/dl1451
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/cam_options_setup.html https://onlinedevices.org.uk/dl1473
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/cam_setup_mode.html https://onlinedevices.org.uk/dl1474
 wget -O /home/$uservarname/starter_maker_PCB1/RPi_code/image_taking/image_taking_controller/templates/header_insert.html https://onlinedevices.org.uk/dl1475
