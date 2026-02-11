@@ -25,7 +25,7 @@ The custom PCB (v1.0) was designed using KiCAD and the layout has been defined t
 
 Gerber files for the PCB design can be downloaded from the PCB_design_files folder.
 
-## 
+## Controller code
 
 The code, detailed more fully below, allows a number of different projects to be explored by a 'starter' digital maker.
  - Scratch and Python code is available for the family of Raspberry Pi SBCs,  
