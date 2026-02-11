@@ -1,14 +1,21 @@
 # Starter Maker PCB
- Documentation plus Raspberry Pi and microcontroller code for a starter level digital maker PCB.
 
- &nbsp; &nbsp; <img src="images\annotated_assembled_starter_PCB01_500w.jpg">
+The aim of this project was to provide a small, easily soldered PCB that allows a range of projects to be explored that control electronic components using any of the main single board computer (SBC) Raspberry Pi's as well as a number of different microcontrollers.
 
-A 'starter' maker PCB that uses just a few basic electronic components, as shown above, and can be connected to any of the main single board computer (SBC) Raspberry Pi's or a number of different microcontrollers - [more detailed project information here](https://onlinedevices.org.uk/Starter+Maker+PCB) and the designs for an associated custom 3D printed component can be downloaded from [here](https://www.prusaprinters.org/prints/67963-pcb-support-foot)
+Whilst the assembled PCB provides a robust and durable platform it should be noted that all the various uses profiled here can still be carried out without the use of the custom PCB which just makes the various connections to the different controllers a lot easier.
 
-The code allows a number of different projects to be explored by a 'starter' digital maker.
- - Scratch and Python code is available for the family of Raspberry Pi SBCs,  
- - Arduino IDE (C/C++) for the Raspberry Pi Pico, ESP8266 and ESP32 microcontrollers, plus 
- - MicroPython code for the Raspberry Pi Pico.
+This 'starter' maker PCB uses just a few basic electronic components, as shown below, with [more detailed project information provided here](https://onlinedevices.org.uk/Starter+Maker+PCB) and the designs for some associated custom 3D printed components can be downloaded from [here](https://www.prusaprinters.org/prints/67963-pcb-support-foot)
+
+&nbsp; &nbsp; <img src="images\annotated_assembled_starter_PCB01_500w.jpg">
+
+The various sections below provide more detail on:
+ - the documentation made available in the 'documentation' folder;
+ - the design details for the PCB made available in the 'PCB_design_files' folder; and
+ - the software available as downloads from the various 'code' folders.
+
+## Documentation
+
+Multiple sets of documentation can be downloaded from the 'documentation' folder.
 
 ## Custom PCB design
 
@@ -18,7 +25,14 @@ The custom PCB (v1.0) was designed using KiCAD and the layout has been defined t
 
 Gerber files for the PCB design can be downloaded from the PCB_design_files folder.
 
-## Raspberry Pi SBC code
+## 
+
+The code, detailed more fully below, allows a number of different projects to be explored by a 'starter' digital maker.
+ - Scratch and Python code is available for the family of Raspberry Pi SBCs,  
+ - Arduino IDE (C/C++) for the Raspberry Pi Pico, ESP8266 and ESP32 microcontrollers, plus 
+ - MicroPython code for the Raspberry Pi Pico.
+
+### Raspberry Pi SBC code
 The code and documentation has been updated to allow for a generalised username instead of the previous default username 'pi', and for the use of Python using the Bookworm OS the use of a Virtual Environment is described. 
 
 Two installation scripts are also provided that not only download all the code and documentation but also install all the various libraries/modules needed by the code.
@@ -31,15 +45,15 @@ Python example code can usually be run using the Thonny IDE on a Raspberry Pi SB
 
 The image taking code also assumes various folders for the storage of different types of 'taken' images and these folders are not always auto-created so the code should be checked so that the appropriate folders can be created before the code is run.
 
-## Raspberry Pi Pico microcontroller code
+### Raspberry Pi Pico microcontroller code
 Both MicroPython and Arduino IDE (C/C++) example code are provided in separate folders, plus two .zip files are provided in the documentation folder that each conveniently have the code, the main user documentation PDF and short MicroPython or C/C++ usage PDF notes.
 
-## ESP32 microcontroller code
+### ESP32 microcontroller code
 Just Arduino IDE (C/C++) example code is provided in a separate folder that was developed and tested using a 38pin ESP32 microcontroller module. In addition a .zip file is provided in the documentation folder that conveniently has the code, the main user documentation PDF and a short C/C++ usage PDF note.
 
 For the buzzer_player and LED1_flash_web example code, 'data' is used that needs to be loaded into the microcontroller SPIFFS before compiling and uploading the code.
 
-## ESP8266 microcontroller code
+### ESP8266 microcontroller code
 Just Arduino IDE (C/C++) example code is provided in a separate folder that was developed and tested using a 30pin ESP8266 microcontroller NodeMCU v1.0 module. In addition a .zip file is provided in the documentation folder that conveniently has the code, the main user documentation PDF and a short C/C++ usage PDF note.
 
 For the buzzer_player and the various versions of the LED1_flash_web*** example code, 'data' is used that needs to be loaded into the microcontroller SPIFFS before compiling and uploading the code.
