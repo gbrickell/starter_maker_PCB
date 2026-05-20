@@ -2,7 +2,7 @@
 starter_maker_pcb_ePi_readme.txt - version control details for the Starter Maker PCB: Electronic Basics
 *******************************************************************************************************
 
-required components version 2.0 September 2024
+required components version 2.2 May 2026
 ----------------------------------------------
   required components for use with the v1.0 PCB are listed in the starter_maker_pcb_getting_started.pdf
   and starter_maker_pcb_usage _documentation.pdf documents
@@ -15,15 +15,15 @@ required components version 2.0 September 2024
   user if you have no further use for it. 
 
 *******************************************************************	
-software & documentation version 2.0  September 2024
+software & documentation version 2.2  May 2026
 -------------------------------------------------------------------
   description: updated version with content to support usage with Raspberry Pi SBCs using the Bookworm OS 
                plus Raspberry Pi Pico, ESP32 and ESP8266 microcontrollers
 
   ** documentation ** 
     starter_maker_pcb_ePi_readme.txt - this document which is updated whenever a new version is released
-    starter_maker_pcb_getting_started_v2.0.pdf - Starter Maker PCB getting started leaflet v2.0 September 2024
-    starter_maker_pcb_usage_documentation_v2-1.pdf - Starter Maker PCB detailed usage documentation v2.1 September 2024
+    starter_maker_pcb_getting_started_v2.2.pdf - Starter Maker PCB getting started leaflet v2.2 May 2026
+    starter_maker_pcb_usage_documentation_v2-2.pdf - Starter Maker PCB detailed usage documentation v2.2 May 2026
 	Starter_Maker_PCB_Pico_Csoftware_usage_v2-0.pdf - Starter Maker PCB Raspberry Pi Pico microcontroller C/C++ usage notes v2.0 September 2024
 	Starter_Maker_PCB_Pico_MPsoftware_usage_v2-0.pdf - Starter Maker PCB Raspberry Pi Pico microcontroller MicroPython usage notes v2.0 September 2024
 	Starter_Maker_PCB_ESP32_Csoftware_usage_v2-0.pdf - Starter Maker PCB ESP32 microcontroller C/C++ usage notes v2.0 September 2024
@@ -102,4 +102,4 @@ software & documentation version 2.0  September 2024
 		- LED1_flash_webfixed
 
 
-copyright 2021-2024 Geoff Brickell
+copyright 2021-2026 Geoff Brickell
