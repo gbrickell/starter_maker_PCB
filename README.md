@@ -8,6 +8,8 @@ This 'starter' maker PCB uses just a few basic electronic components, as shown b
 
 &nbsp; &nbsp; <img src="images\annotated_assembled_starter_PCB01_500w.jpg">
 
+Whilst stocks last a set of components that are needed to build a fully populated module, including the PCB, can be purchased[here](https://www.ebay.co.uk/itm/358580443668).
+
 The various sections below provide more detail on:
  - the documentation made available in the 'documentation' folder;
  - the design details for the PCB made available in the 'PCB_design_files' folder; and
@@ -19,7 +21,7 @@ Multiple sets of documentation can be downloaded from the 'documentation' folder
 
 ## Custom PCB design
 
-The custom PCB (v1.0) was designed using KiCAD and the layout has been defined to allow a connector to attach to any Raspberry Pi and a range of microcontrollers, and a set of components that are needed to build a fully populated module.
+The custom PCB (v1.0) was designed using KiCAD and the layout has been defined to allow a connector to attach to any Raspberry Pi and a range of microcontrollers.
 
 <img src="images/Starter_PCB01_front_900w.jpg" width="139" height="180"> &nbsp; &nbsp; <img src="images/Starter_PCB01_20210518_133032651.NIGHT_900w.jpg" width="174" height="180"> &nbsp; &nbsp; <img src="images/Starter_PCB01_20210518_132216142_900w.jpg" width="193" height="180">  
 
