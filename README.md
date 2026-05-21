@@ -8,7 +8,7 @@ This 'starter' maker PCB uses just a few basic electronic components, as shown b
 
 &nbsp; &nbsp; <img src="images\annotated_assembled_starter_PCB01_500w.jpg">
 
-Whilst stocks last a set of components that are needed to build a fully populated module, including the PCB, can be purchased[here](https://www.ebay.co.uk/itm/358580443668).
+Whilst stocks last a set of components that are needed to build a fully populated module, including the PCB, can be purchased [here](https://www.ebay.co.uk/itm/358580443668).
 
 The various sections below provide more detail on:
  - the documentation made available in the 'documentation' folder;
